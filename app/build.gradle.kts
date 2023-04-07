@@ -1,8 +1,8 @@
 plugins {
     id (Plugins.AGP.application)
-    id (Plugins.Kotlin.android)
     id (Plugins.Kotlin.kapt)
     id (Plugins.DaggerHilt.hilt)
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
