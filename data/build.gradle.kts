@@ -1,11 +1,11 @@
 plugins {
-    id (Plugins.AGP.library)
-    id (Plugins.Kotlin.android)
+    id(Plugins.AGP.library)
+    id(Plugins.Kotlin.android)
 }
 
 android {
     namespace = "com.example.data"
-    compileSdk  = AppConfig.compileSdk
+    compileSdk = AppConfig.compileSdk
 
     defaultConfig {
         minSdk = AppConfig.minSdk
@@ -18,7 +18,10 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -32,10 +35,10 @@ android {
 
 dependencies {
 
-    implementation (Dependencies.UI.core)
-    implementation (Dependencies.UI.appcompat)
-    implementation (Dependencies.UI.material)
-    testImplementation (Dependencies.UI.junit)
-    androidTestImplementation (Dependencies.UI.test_junit)
-    androidTestImplementation (Dependencies.UI.espresso)
+    implementation(Dependencies.UI.core)
+    implementation(Dependencies.UI.appcompat)
+    implementation(Dependencies.UI.material)
+    testImplementation(Dependencies.UI.junit)
+    androidTestImplementation(Dependencies.UI.test_junit)
+    androidTestImplementation(Dependencies.UI.espresso)
 }

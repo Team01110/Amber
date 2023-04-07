@@ -33,7 +33,7 @@ object Dependencies {
         const val espresso = ("androidx.test.espresso:espresso-core:${Versions.espresso}")
     }
 
-    object Firebase{
+    object Firebase {
         const val firebase_bom = ("com.google.firebase:firebase-bom:${Versions.firebase}")
         const val firebase_auth = ("com.google.firebase:firebase-auth-ktx")
         const val firebase_firestore = ("com.google.firebase:firebase-firestore-ktx")
@@ -47,7 +47,7 @@ object Dependencies {
         const val room_compiler = ("com.google.dagger:hilt-compiler:${Versions.room}")
     }
 
-    object Glide{
+    object Glide {
         const val glide = ("com.github.bumptech.glide:glide:4.15.0")
         const val glide_compiler = ("com.github.bumptech.glide:compiler:4.15.0")
     }
