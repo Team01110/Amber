@@ -45,4 +45,9 @@
         android:name="com.example.amber.fragment.product.ProductFragment"
         android:label="fragment_product"
         tools:layout="@layout/fragment_product" />
+    <fragment
+        android:id="@+id/launchFragment"
+        android:name="com.example.amber.fragment.launch.LaunchFragment"
+        android:label="fragment_launch"
+        tools:layout="@layout/fragment_launch" />
 </navigation>
