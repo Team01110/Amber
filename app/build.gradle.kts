@@ -1,8 +1,8 @@
 plugins {
-    id(Plugins.AGP.application)
-    id(Plugins.Kotlin.kapt)
-    id(Plugins.DaggerHilt.hilt)
-    id("org.jetbrains.kotlin.android")
+    id (Plugins.AGP.application)
+    id (Plugins.Kotlin.android)
+    id (Plugins.Kotlin.kapt)
+    id (Plugins.DaggerHilt.hilt)
 }
 
 android {
@@ -22,10 +22,7 @@ android {
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
     compileOptions {
@@ -42,41 +39,40 @@ android {
 
 dependencies {
 
-    implementation(Dependencies.UI.core)
-    implementation(Dependencies.UI.appcompat)
-    implementation(Dependencies.UI.material)
-    implementation(Dependencies.UI.constraintlayout)
-    implementation(Dependencies.UI.viewmodel)
-    implementation(Dependencies.UI.fragment)
-    implementation(Dependencies.UI.stdlib)
-    testImplementation(Dependencies.UI.junit)
-    androidTestImplementation(Dependencies.UI.test_junit)
-    androidTestImplementation(Dependencies.UI.espresso)
+    implementation (Dependencies.UI.core)
+    implementation (Dependencies.UI.appcompat)
+    implementation (Dependencies.UI.material)
+    implementation (Dependencies.UI.constraintlayout)
+    implementation (Dependencies.UI.viewmodel)
+    implementation (Dependencies.UI.fragment)
+    implementation (Dependencies.UI.stdlib)
+    testImplementation (Dependencies.UI.junit)
+    androidTestImplementation (Dependencies.UI.test_junit)
+    androidTestImplementation (Dependencies.UI.espresso)
 
     //Coroutine
-    implementation(Dependencies.Coroutine.coroutines)
+    implementation (Dependencies.Coroutine.coroutines)
 
     //Hilt
-    implementation(Dependencies.DaggerHilt.hilt)
-    kapt(Dependencies.DaggerHilt.hilt_compiler)
+    implementation (Dependencies.DaggerHilt.hilt)
+    kapt (Dependencies.DaggerHilt.hilt_compiler)
 
     //Room
-    implementation(Dependencies.Room.room_runtime)
-    implementation(Dependencies.Room.room_ktx)
-    kapt(Dependencies.Room.room_compiler)
+    implementation (Dependencies.Room.room_runtime)
+    implementation (Dependencies.Room.room_ktx)
+    kapt (Dependencies.Room.room_compiler)
 
     //Navigation
-    implementation(Dependencies.Nav.navigation_fragment)
-    implementation(Dependencies.Nav.navigation)
+    implementation (Dependencies.Nav.navigation_fragment)
+    implementation (Dependencies.Nav.navigation)
 
     //Firebase
-    implementation(Dependencies.Firebase.firebase_auth)
-    implementation(Dependencies.Firebase.firebase_bom)
-    implementation(Dependencies.Firebase.firebase_firestore)
-    implementation(Dependencies.Firebase.firebase_storage)
+    implementation (Dependencies.Firebase.firebase_auth)
+    implementation (Dependencies.Firebase.firebase_bom)
+    implementation (Dependencies.Firebase.firebase_firestore)
+    implementation (Dependencies.Firebase.firebase_storage)
 
     //Glide
     implementation(Dependencies.Glide.glide)
-    implementation(Dependencies.Glide.glide_compiler)
 
 }

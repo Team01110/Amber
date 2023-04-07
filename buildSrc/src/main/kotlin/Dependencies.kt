@@ -33,11 +33,11 @@ object Dependencies {
         const val espresso = ("androidx.test.espresso:espresso-core:${Versions.espresso}")
     }
 
-    object Firebase {
+    object Firebase{
         const val firebase_bom = ("com.google.firebase:firebase-bom:${Versions.firebase}")
-        const val firebase_auth = ("com.google.firebase:firebase-auth-ktx")
-        const val firebase_firestore = ("com.google.firebase:firebase-firestore-ktx")
-        const val firebase_storage = ("com.google.firebase:firebase-storage-ktx")
+        const val firebase_auth = ("com.google.firebase:firebase-auth-ktx:${Versions.firebase_auth}")
+        const val firebase_firestore = ("com.google.firebase:firebase-firestore-ktx:${Versions.firebase_firestore}")
+        const val firebase_storage = ("com.google.firebase:firebase-storage-ktx:${Versions.firebase_storage}")
     }
 
 
@@ -47,9 +47,8 @@ object Dependencies {
         const val room_compiler = ("com.google.dagger:hilt-compiler:${Versions.room}")
     }
 
-    object Glide {
-        const val glide = ("com.github.bumptech.glide:glide:4.15.0")
-        const val glide_compiler = ("com.github.bumptech.glide:compiler:4.15.0")
+    object Glide{
+        const val glide = ("com.github.bumptech.glide:glide:${Versions.glide}")
     }
 
     object DaggerHilt {
@@ -91,6 +90,10 @@ object Versions {
     //other impl
     const val room = "2.5.0"
     const val firebase = "31.3.0"
+    const val firebase_auth = "21.1.0"
+    const val firebase_firestore = "18.2.0"
+    const val firebase_storage = "19.1.0"
+    const val glide = "4.15.0"
     const val coroutines = "1.6.4"
     const val navigation = "2.5.3"
 }
