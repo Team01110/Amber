@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.targets.js.npm.includedRange
+
 plugins {
     id (Plugins.AGP.library)
     id (Plugins.Kotlin.android)
