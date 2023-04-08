@@ -16,6 +16,10 @@ object Plugins {
         const val hilt = "com.google.dagger.hilt.android"
     }
 
+    object Retrofit {
+        const val retrofit =  ("com.squareup.retrofit2:retrofit:${Versions.retrofit}")
+        const val converter =  ("com.squareup.retrofit2:converter-gson:${Versions.retrofit}")
+    }
 }
 
 object Dependencies {
@@ -90,6 +94,7 @@ object Versions {
     const val kotlin = "1.8.0"
 
     //other impl
+    const val retrofit = "2.9.0"
     const val room = "2.5.0"
     const val firebase = "31.3.0"
     const val firebase_auth = "21.1.0"

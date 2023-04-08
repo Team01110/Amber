@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.targets.js.npm.includedRange
+
 plugins {
     id (Plugins.AGP.library)
     id (Plugins.Kotlin.android)
@@ -54,4 +56,7 @@ dependencies {
     //Hilt
     implementation (Dependencies.DaggerHilt.hilt)
     kapt (Dependencies.DaggerHilt.hilt_compiler)
+
+    implementation(Plugins.Retrofit.retrofit)
+    implementation(Plugins.Retrofit.converter)
 }
