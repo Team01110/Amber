@@ -4,7 +4,7 @@ import com.example.domain.model.AmberItem
 import com.example.domain.repo.Repository
 
 class GetAllAmberUseCase(private val amberRepository: Repository) {
-    fun getAllAmber(amberItem: AmberItem){
+    fun getAllAmber(amberItem: AmberItem) {
         amberRepository.getAllAmber()
     }
 }
