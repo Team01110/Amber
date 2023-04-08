@@ -1,6 +1,7 @@
 package di
 
 import android.content.Context
+import android.content.SharedPreferences
 import androidx.room.Room
 import dagger.Module
 import dagger.Provides
@@ -22,6 +23,12 @@ object DataModule {
         AppDatabase::class.java,
         "Amber-db"
     ).build()
+
+    @Singleton
+    @Provides
+    fun provideSharedPreference(@ApplicationContext context: Context): SharedPreferences {
+        return context.getSharedPreferences("isShow", Context.MODE_PRIVATE)
+    }
 
     @Provides
     fun amberDao(appDatabase: AppDatabase): AmberDao = appDatabase.amberDao()
