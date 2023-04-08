@@ -59,4 +59,9 @@ dependencies {
 
     implementation(Plugins.Retrofit.retrofit)
     implementation(Plugins.Retrofit.converter)
+
+    //Coroutine
+    implementation (Dependencies.Coroutine.coroutines)
+    implementation(Dependencies.Coroutine.coroutinescore)
+
 }
