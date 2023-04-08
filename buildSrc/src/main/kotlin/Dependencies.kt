@@ -59,6 +59,8 @@ object Dependencies {
     object Coroutine {
         const val coroutines =
             ("org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}")
+        const val coroutinescore =
+            ("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutinescore}-Beta")
     }
 
     object Nav {
@@ -95,5 +97,6 @@ object Versions {
     const val firebase_storage = "19.1.0"
     const val glide = "4.15.0"
     const val coroutines = "1.6.4"
+    const val coroutinescore = "1.7.0"
     const val navigation = "2.5.3"
 }
