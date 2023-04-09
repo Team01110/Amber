@@ -24,9 +24,9 @@ object DataModule {
     @Singleton
     fun AmberApi(): ApiService {
         return Retrofit.Builder()
-        .baseUrl("https://fakestoreapi.com/")
-        .addConverterFactory(GsonConverterFactory.create()).build()
-        .create(ApiService::class.java)
+            .baseUrl("https://fakestoreapi.com/")
+            .addConverterFactory(GsonConverterFactory.create()).build()
+            .create(ApiService::class.java)
     }
 
     @Provides
