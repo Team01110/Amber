@@ -49,6 +49,7 @@ dependencies {
     testImplementation (Dependencies.UI.junit)
     androidTestImplementation (Dependencies.UI.test_junit)
     androidTestImplementation (Dependencies.UI.espresso)
+    implementation(project(":domain"))
 
     //Coroutine
     implementation (Dependencies.Coroutine.coroutines)
