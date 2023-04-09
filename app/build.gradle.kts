@@ -2,7 +2,7 @@ plugins {
     id (Plugins.AGP.application)
     id (Plugins.Kotlin.android)
     id (Plugins.Kotlin.kapt)
-    id (Plugins.DaggerHilt.hilt)
+//    id (Plugins.DaggerHilt.hilt)
 }
 
 android {
@@ -17,6 +17,10 @@ android {
         versionName = AppConfig.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    packagingOptions {
+         resources.excludes.add("META-INF/versions/9/previous-compilation-data.bin")
     }
 
     buildTypes {
@@ -54,24 +58,17 @@ dependencies {
     //Coroutine
     implementation (Dependencies.Coroutine.coroutines)
 
-    //Hilt
-    implementation (Dependencies.DaggerHilt.hilt)
-    kapt (Dependencies.DaggerHilt.hilt_compiler)
 
-    //Room
-    implementation (Dependencies.Room.room_runtime)
-    implementation (Dependencies.Room.room_ktx)
-    kapt (Dependencies.Room.room_compiler)
 
     //Navigation
     implementation (Dependencies.Nav.navigation_fragment)
     implementation (Dependencies.Nav.navigation)
 
-    //Firebase
-    implementation (Dependencies.Firebase.firebase_auth)
+//    //Firebase
+//    implementation (Dependencies.Firebase.firebase_auth)
     implementation (Dependencies.Firebase.firebase_bom)
-    implementation (Dependencies.Firebase.firebase_firestore)
-    implementation (Dependencies.Firebase.firebase_storage)
+//    implementation (Dependencies.Firebase.firebase_firestore)
+//    implementation (Dependencies.Firebase.firebase_storage)
 
     //Glide
     implementation(Dependencies.Glide.glide)

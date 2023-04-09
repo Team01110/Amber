@@ -14,7 +14,7 @@ class BaseViewModel : ViewModel() {
         viewModelScope.launch {
             this@collectFlow.collect {
                 when (it) {
-                    is ResultStatus.Error -> state.value = UiState.Error(it.error)
+                    is ResultStatus.Error -> state.value = UiState.Error(it.error!!)
                     is ResultStatus.Loading -> state.value = UiState.Loading()
                     is ResultStatus.Success -> if (it.data != null) state.value =
                         UiState.Success(it.data)

@@ -1,4 +1,3 @@
-import org.jetbrains.kotlin.gradle.targets.js.npm.includedRange
 
 plugins {
     id (Plugins.AGP.library)
@@ -55,7 +54,7 @@ dependencies {
     kapt (Dependencies.Room.room_compiler)
 
     //Retrofit
-    implementation(Dependencies.Retrofit.retrofit)
+      implementation(Dependencies.Retrofit.retrofit)
     implementation(Dependencies.Retrofit.converter)
 
     //Coroutine
@@ -66,11 +65,5 @@ dependencies {
     implementation (Dependencies.DaggerHilt.hilt)
     kapt (Dependencies.DaggerHilt.hilt_compiler)
 
-    implementation(Plugins.Retrofit.retrofit)
-    implementation(Plugins.Retrofit.converter)
-
-    //Coroutine
-    implementation (Dependencies.Coroutine.coroutines)
-    implementation(Dependencies.Coroutine.coroutinescore)
 
 }
