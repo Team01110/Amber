@@ -16,6 +16,7 @@ object Plugins {
         const val hilt = "com.google.dagger.hilt.android"
     }
 
+
 }
 
 object Dependencies {
@@ -31,6 +32,11 @@ object Dependencies {
         const val junit = ("junit:junit:${Versions.junit}")
         const val test_junit = ("androidx.test.ext:junit:${Versions.test_junit}")
         const val espresso = ("androidx.test.espresso:espresso-core:${Versions.espresso}")
+    }
+
+    object Retrofit {
+        const val retrofit =  ("com.squareup.retrofit2:retrofit:${Versions.retrofit}")
+        const val converter =  ("com.squareup.retrofit2:converter-gson:${Versions.retrofit}")
     }
 
     object Firebase{
@@ -85,11 +91,12 @@ object Versions {
     const val espresso = "3.5.1"
 
     //plugins
-    const val AGP = "7.3.1"
-    const val daggerHilt = "2.43"
+    const val AGP = "7.4.2"
+    const val daggerHilt = "2.44"
     const val kotlin = "1.8.0"
 
     //other impl
+    const val retrofit = "2.9.0"
     const val room = "2.5.0"
     const val firebase = "31.3.0"
     const val firebase_auth = "21.1.0"
