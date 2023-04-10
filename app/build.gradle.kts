@@ -58,7 +58,8 @@ dependencies {
     //Coroutine
     implementation (Dependencies.Coroutine.coroutines)
 
-
+    //ViewPager2
+    implementation(Dependencies.viewpager2.viewpager2)
 
     //Navigation
     implementation (Dependencies.Nav.navigation_fragment)
