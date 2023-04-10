@@ -27,6 +27,7 @@ class HomeAdapter : ListAdapter<AmberItem, HomeAdapter.HomeViewHolder>(NotesCall
     inner class HomeViewHolder(private val binding: HomeItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(Model: AmberItem) {
+
         }
     }
 
