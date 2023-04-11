@@ -7,4 +7,11 @@
     <string name="_1_600">$1,600</string>
     <string name="category">Категории</string>
     <string name="recomendary">Рекомендуется для вас</string>
+    <string name="regist">Регистрация</string>
+    <string name="email">Email</string>
+    <string name="name">Имя</string>
+    <string name="password">Пароль</string>
+    <string name="confident">By creating an account, you agree to our Term and Conditions</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Already have an account? Sign in</string>
 </resources>
