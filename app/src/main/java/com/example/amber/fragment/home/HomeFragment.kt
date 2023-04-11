@@ -11,21 +11,21 @@ import dagger.hilt.android.AndroidEntryPoint
 class HomeFragment :
     BaseFragment<HomeViewModel, FragmentHomeBinding>(FragmentHomeBinding::inflate) {
     override val vm: HomeViewModel by viewModels()
-    private lateinit var adapter: HomeAdapter
-    private lateinit var adapter2: HomesAdapter
+    private lateinit var adapterRv: HomeAdapterRv
+    private lateinit var adapterVp: HomeAdapterVp
 
     override fun initialize() {
-        binding.rvHome.adapter = adapter
-        binding.rvHome2.adapter = adapter2
+        binding.rvHome.adapter = adapterRv
+        binding.rvHome2.adapter = adapterVp
         vm.amberUseCase()
     }
 
     override fun setupRequest() {
-        vm.amberState.collectState(onLoading = {
+        vm.getListItem.collectState(onLoading = {
          binding.notesBar.isVisible = true
         }, onSuccess = {
-            adapter.submitList(it)
-            adapter2.submitList(it)
+            adapterRv.submitList(it)
+            adapterVp.submitList(it)
             binding.notesBar.isVisible = false
         }, onError = {
             showToast(it)

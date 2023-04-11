@@ -13,12 +13,12 @@ import kotlinx.coroutines.launch
 @HiltViewModel
 class HomeViewModel(private val getAllAmberUseCase:GetAllAmberUseCase):BaseViewModel() {
 
-    private val _amberState = MutableStateFlow<UiState<List<AmberItem>>>(UiState.Empty())
-    val amberState = _amberState.asStateFlow()
+    private val _getListItem = MutableStateFlow<UiState<List<AmberItem>>>(UiState.Empty())
+    val getListItem = _getListItem.asStateFlow()
 
     fun amberUseCase() {
         viewModelScope.launch(Dispatchers.IO) {
-           getAllAmberUseCase().collectFlow(_amberState)
+           getAllAmberUseCase().collectFlow(_getListItem)
         }
     }
 }

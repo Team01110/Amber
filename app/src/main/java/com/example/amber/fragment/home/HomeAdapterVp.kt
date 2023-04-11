@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.amber.databinding.ItemHomeVpBinding
 import com.example.domain.model.AmberItem
 
-class HomesAdapter() : ListAdapter<AmberItem, HomesAdapter.HomesViewHolder>(NotesCallback()) {
+class HomeAdapterVp() : ListAdapter<AmberItem, HomeAdapterVp.HomesViewHolder>(NotesCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomesViewHolder {
         val binding = ItemHomeVpBinding.inflate(
