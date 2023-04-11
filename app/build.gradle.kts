@@ -19,10 +19,6 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    packagingOptions {
-         resources.excludes.add("META-INF/versions/9/previous-compilation-data.bin")
-    }
-
     buildTypes {
         release {
             isMinifyEnabled = false
