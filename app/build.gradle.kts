@@ -20,7 +20,7 @@ android {
     }
 
     packagingOptions {
-        resources.excludes.add("META-INF/versions/9/previous-compilation-data.bin")
+        resources.excludes.add("META-INF/*")
     }
 
     buildTypes {
@@ -31,6 +31,9 @@ android {
                 "proguard-rules.pro"
             )
         }
+    }
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
