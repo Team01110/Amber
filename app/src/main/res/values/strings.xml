@@ -2,10 +2,9 @@
     <string name="app_name">Amber</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="speakers">Speakers</string>
-    <string name="_100_produkt">100+Produkt</string>
-    <string name="beosound_1">Beosound 1</string>
+    <string name="title">Title Product</string>
+    <string name="_100_product">100+Product</string>
     <string name="_1_600">$1,600</string>
-    <string name="kotegorii">Котегории</string>
-    <string name="recomenduet">Рекомендуется для вас</string>
+    <string name="category">Категории</string>
+    <string name="recomendary">Рекомендуется для вас</string>
 </resources>

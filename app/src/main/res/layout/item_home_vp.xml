@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="200dp"
+    android:layout_height="300dp"
+    android:layout_margin="33dp"
+    android:backgroundTint="#FAE7D6"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="11dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_item_vp"
+            android:layout_width="138dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="71dp"
+            android:background="@color/purple_500"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_tv_title_vp"
+            android:layout_width="170dp"
+            android:layout_height="24dp"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:text="@string/title"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/img_item_vp"
+            app:layout_constraintStart_toStartOf="@+id/img_item_vp"
+            app:layout_constraintTop_toBottomOf="@+id/img_item_vp" />
+
+        <TextView
+            android:id="@+id/item_tv_count_vp"
+            android:layout_width="170dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:text="@string/_100_product"
+            android:textStyle="normal"
+            app:layout_constraintEnd_toEndOf="@+id/item_tv_title_vp"
+            app:layout_constraintStart_toStartOf="@+id/item_tv_title_vp"
+            app:layout_constraintTop_toBottomOf="@+id/item_tv_title_vp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

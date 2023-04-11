@@ -13,73 +13,75 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/img" />
     </Toolbar>
-    
+
     <TextView
-        android:textColor="@color/black"
-        android:id="@+id/tv_kotegorii"
-        android:textSize="23sp"
-        android:textStyle="bold"
-        android:text="@string/kotegorii"
-        android:gravity="center"
+        android:id="@+id/tv_category"
         android:layout_width="305dp"
         android:layout_height="26dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="@string/category"
+        android:textColor="@color/black"
+        android:textSize="23sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        android:layout_marginTop="24dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:orientation="vertical"
-        app:spanCount="2"
-        tools:listitem="@layout/home_item"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         android:id="@+id/rv_home"
         android:layout_width="match_parent"
-        android:layout_height="235dp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_kotegorii"
-        android:layout_marginTop="5dp"/>
+        android:layout_height="350dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/tv_recomendary"
+        app:layout_constraintTop_toBottomOf="@+id/tv_category"
+        app:spanCount="2"
+        tools:listitem="@layout/item_home_vp" />
 
     <TextView
-        android:textColor="@color/black"
-        android:layout_marginTop="24dp"
-        android:id="@+id/tv_recomenduem"
-        android:textSize="23sp"
-        android:textStyle="bold"
-        android:text="@string/recomenduet"
-        android:gravity="center"
+        android:id="@+id/tv_recomendary"
         android:layout_width="305dp"
         android:layout_height="26dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="@string/recomendary"
+        android:textColor="@color/black"
+        android:textSize="23sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_home" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:orientation="vertical"
-        app:spanCount="2"
-        tools:listitem="@layout/item2_home"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         android:id="@+id/rv_home2"
         android:layout_width="match_parent"
-        android:layout_height="235dp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_recomenduem"
-        android:layout_marginTop="24dp"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/tv_recomendary"
+        app:spanCount="2"
+        tools:listitem="@layout/item_home_rv" />
 
     <com.google.android.material.progressindicator.CircularProgressIndicator
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/notes_bar"
-        app:trackColor="#FF5722"
-        app:indicatorColor="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:progress="25"/>
+        android:progress="25"
+        android:visibility="gone"
+        app:indicatorColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:trackColor="#FF5722" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

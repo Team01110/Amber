@@ -5,14 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.amber.databinding.HomeItemBinding
-import com.example.amber.databinding.Item2HomeBinding
+import com.example.amber.databinding.ItemHomeVpBinding
 import com.example.domain.model.AmberItem
 
 class HomesAdapter() : ListAdapter<AmberItem, HomesAdapter.HomesViewHolder>(NotesCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomesViewHolder {
-        val binding = Item2HomeBinding.inflate(
+        val binding = ItemHomeVpBinding.inflate(
             LayoutInflater.from(parent.context),
             parent, false
         )
@@ -24,9 +23,9 @@ class HomesAdapter() : ListAdapter<AmberItem, HomesAdapter.HomesViewHolder>(Note
         holder.bind(model)
     }
 
-    inner class HomesViewHolder(private val binding: Item2HomeBinding) :
+    inner class HomesViewHolder(private val binding: ItemHomeVpBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(Model: AmberItem) {
+        fun bind(model: AmberItem) {
         }
     }
 

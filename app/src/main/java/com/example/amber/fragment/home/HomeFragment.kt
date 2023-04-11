@@ -4,7 +4,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import com.example.amber.base.BaseFragment
 import com.example.amber.databinding.FragmentHomeBinding
-import com.example.amber.exseption.ShowTost
+import com.example.amber.exseption.showToast
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -28,7 +28,7 @@ class HomeFragment :
             adapter2.submitList(it)
             binding.notesBar.isVisible = false
         }, onError = {
-            ShowTost(it)
+            showToast(it)
             binding.notesBar.isVisible = false
         })
     }

@@ -94,7 +94,7 @@ object Versions {
     const val espresso = "3.5.1"
 
     //plugins
-    const val AGP = "7.3.1"
+    const val AGP = "7.4.2"
     const val daggerHilt = "2.44"
     const val kotlin = "1.8.0"
     const val kotlin_jvm = "1.8.0"
