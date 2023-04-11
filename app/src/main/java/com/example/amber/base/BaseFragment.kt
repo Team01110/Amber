@@ -54,11 +54,9 @@ abstract class BaseFragment<VM : BaseViewModel, VB : ViewBinding>(
                         is UiState.Empty -> {}
                         is UiState.Error -> {
                             onError(it.msg)
-
                         }
                         is UiState.Loading -> {
                             onLoading()
-
                         }
                         is UiState.Success -> {
                             if (it.data != null)
@@ -68,6 +66,5 @@ abstract class BaseFragment<VM : BaseViewModel, VB : ViewBinding>(
                 }
             }
         }
-
     }
 }

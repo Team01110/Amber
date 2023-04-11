@@ -8,8 +8,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
-class BaseViewModel : ViewModel() {
-
+abstract class BaseViewModel : ViewModel() {
     protected fun <T> Flow<ResultStatus<T>>.collectFlow(state: MutableStateFlow<UiState<T>>) {
         viewModelScope.launch {
             this@collectFlow.collect {

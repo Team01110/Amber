@@ -1,8 +1,8 @@
 plugins {
-    id (Plugins.AGP.application)
-    id (Plugins.Kotlin.android)
-    id (Plugins.Kotlin.kapt)
-//    id (Plugins.DaggerHilt.hilt)
+    id(Plugins.AGP.application)
+    id(Plugins.Kotlin.android)
+    id(Plugins.Kotlin.kapt)
+    id (Plugins.DaggerHilt.hilt)
 }
 
 android {
@@ -19,10 +19,17 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    packagingOptions {
+        resources.excludes.add("META-INF/versions/9/previous-compilation-data.bin")
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -39,32 +46,34 @@ android {
 
 dependencies {
 
-    implementation (Dependencies.UI.core)
-    implementation (Dependencies.UI.appcompat)
-    implementation (Dependencies.UI.material)
-    implementation (Dependencies.UI.constraintlayout)
-    implementation (Dependencies.UI.viewmodel)
-    implementation (Dependencies.UI.fragment)
-    implementation (Dependencies.UI.stdlib)
-    testImplementation (Dependencies.UI.junit)
-    androidTestImplementation (Dependencies.UI.test_junit)
-    androidTestImplementation (Dependencies.UI.espresso)
+    implementation(Dependencies.UI.core)
+    implementation(Dependencies.UI.appcompat)
+    implementation(Dependencies.UI.material)
+    implementation(Dependencies.UI.constraintlayout)
+    implementation(Dependencies.UI.viewmodel)
+    implementation(Dependencies.UI.fragment)
+    implementation(Dependencies.UI.stdlib)
+    testImplementation(Dependencies.UI.junit)
+    androidTestImplementation(Dependencies.UI.test_junit)
+    androidTestImplementation(Dependencies.UI.espresso)
     implementation(project(":domain"))
 
+    //Hilt
+    implementation(Dependencies.DaggerHilt.hilt)
+    implementation(Dependencies.DaggerHilt.hilt_compiler)
+
     //Coroutine
-    implementation (Dependencies.Coroutine.coroutines)
+    implementation(Dependencies.Coroutine.coroutines)
 
-
+    //ViewPager2
+    implementation(Dependencies.viewpager2.viewpager2)
 
     //Navigation
-    implementation (Dependencies.Nav.navigation_fragment)
-    implementation (Dependencies.Nav.navigation)
+    implementation(Dependencies.Nav.navigation_fragment)
+    implementation(Dependencies.Nav.navigation)
 
-//    //Firebase
-//    implementation (Dependencies.Firebase.firebase_auth)
-    implementation (Dependencies.Firebase.firebase_bom)
-//    implementation (Dependencies.Firebase.firebase_firestore)
-//    implementation (Dependencies.Firebase.firebase_storage)
+    //Firebase
+    implementation(Dependencies.Firebase.firebase_bom)
 
     //Glide
     implementation(Dependencies.Glide.glide)
