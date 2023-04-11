@@ -74,6 +74,9 @@ object Dependencies {
             ("androidx.navigation:navigation-fragment-ktx:${Versions.navigation}")
         const val navigation = ("androidx.navigation:navigation-ui-ktx:${Versions.navigation}")
     }
+    object viewpager2{
+       const val viewpager2 =  "androidx.viewpager2:viewpager2:${Versions.viewpager2}"
+    }
 }
 
 object Versions {
@@ -91,7 +94,7 @@ object Versions {
     const val espresso = "3.5.1"
 
     //plugins
-    const val AGP = "7.4.2"
+    const val AGP = "7.3.1"
     const val daggerHilt = "2.44"
     const val kotlin = "1.8.0"
     const val kotlin_jvm = "1.8.0"
@@ -107,4 +110,5 @@ object Versions {
     const val coroutines = "1.6.4"
     const val coroutinescore = "1.7.0"
     const val navigation = "2.5.3"
+    const val viewpager2 = "1.0.0"
 }
