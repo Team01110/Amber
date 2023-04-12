@@ -19,10 +19,6 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    packagingOptions {
-        resources.excludes.add("META-INF/*")
-    }
-
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -32,8 +28,10 @@ android {
             )
         }
     }
+
     packagingOptions {
-        resources.excludes.add("META-INF/*")
+        resources.excludes.add("META-INF/versions/9/previous-compilation-data.bin")
+        resources.excludes.add("META-INF/gradle/incremental.annotation.processors")
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
