@@ -1,35 +1,24 @@
 package com.example.amber.fragment.home
 
-import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import com.example.amber.base.BaseFragment
 import com.example.amber.databinding.FragmentHomeBinding
-import com.example.amber.exseption.ShowTost
 import dagger.hilt.android.AndroidEntryPoint
+import service.ApiService
 
 @AndroidEntryPoint
 class HomeFragment :
     BaseFragment<HomeViewModel, FragmentHomeBinding>(FragmentHomeBinding::inflate) {
     override val vm: HomeViewModel by viewModels()
-    private lateinit var adapter: HomeAdapter
-    private lateinit var adapter2: HomesAdapter
+    private lateinit var adaptervp: HomeAdapter
+    private lateinit var adapterrv: HomesAdapter
+    private lateinit var api:ApiService
 
     override fun initialize() {
-        binding.rvHome.adapter = adapter
-        binding.rvHome2.adapter = adapter2
+        binding.rvHome.adapter = adaptervp
+        binding.rvHome2.adapter = adapterrv
         vm.amberUseCase()
     }
 
-    override fun setupRequest() {
-        vm.amberState.collectState(onLoading = {
-         binding.notesBar.isVisible = true
-        }, onSuccess = {
-            adapter.submitList(it)
-            adapter2.submitList(it)
-            binding.notesBar.isVisible = false
-        }, onError = {
-            ShowTost(it)
-            binding.notesBar.isVisible = false
-        })
-    }
+
 }

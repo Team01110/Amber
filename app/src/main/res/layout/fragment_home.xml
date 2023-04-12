@@ -36,7 +36,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:orientation="vertical"
         app:spanCount="2"
-        tools:listitem="@layout/home_item"
+        tools:listitem="@layout/item_home_vp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         android:id="@+id/rv_home"
         android:layout_width="match_parent"
@@ -61,7 +61,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:orientation="vertical"
         app:spanCount="2"
-        tools:listitem="@layout/item2_home"
+        tools:listitem="@layout/item_home_rv"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         android:id="@+id/rv_home2"
         android:layout_width="match_parent"

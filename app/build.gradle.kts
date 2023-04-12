@@ -57,6 +57,7 @@ dependencies {
     androidTestImplementation(Dependencies.UI.test_junit)
     androidTestImplementation(Dependencies.UI.espresso)
     implementation(project(":domain"))
+    implementation(project(":data"))
 
     //Hilt
     implementation(Dependencies.DaggerHilt.hilt)
