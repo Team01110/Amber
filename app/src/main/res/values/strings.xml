@@ -8,4 +8,9 @@
     <string name="_1_600">$1,600</string>
     <string name="kotegorii">Котегории</string>
     <string name="recomenduet">Рекомендуется для вас</string>
+    <string name="basket">корзина</string>
+    <string name="price">price</string>
+    <string name="obshiy">Общий:</string>
+    <string name="beosound">beosound</string>
+    <string name="review">review</string>
 </resources>
