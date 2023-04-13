@@ -16,6 +16,7 @@ object Plugins {
         const val hilt = "com.google.dagger.hilt.android"
     }
 
+
 }
 
 object Dependencies {
@@ -31,6 +32,11 @@ object Dependencies {
         const val junit = ("junit:junit:${Versions.junit}")
         const val test_junit = ("androidx.test.ext:junit:${Versions.test_junit}")
         const val espresso = ("androidx.test.espresso:espresso-core:${Versions.espresso}")
+    }
+
+    object Retrofit {
+        const val retrofit =  ("com.squareup.retrofit2:retrofit:${Versions.retrofit}")
+        const val converter =  ("com.squareup.retrofit2:converter-gson:${Versions.retrofit}")
     }
 
     object Firebase{
@@ -68,6 +74,9 @@ object Dependencies {
             ("androidx.navigation:navigation-fragment-ktx:${Versions.navigation}")
         const val navigation = ("androidx.navigation:navigation-ui-ktx:${Versions.navigation}")
     }
+    object viewpager2{
+       const val viewpager2 =  "androidx.viewpager2:viewpager2:${Versions.viewpager2}"
+    }
 }
 
 object Versions {
@@ -86,17 +95,20 @@ object Versions {
 
     //plugins
     const val AGP = "7.3.1"
-    const val daggerHilt = "2.43"
+    const val daggerHilt = "2.44"
     const val kotlin = "1.8.0"
+    const val kotlin_jvm = "1.8.0"
 
     //other impl
+    const val retrofit = "2.9.0"
     const val room = "2.5.0"
-    const val firebase = "31.3.0"
-    const val firebase_auth = "21.1.0"
-    const val firebase_firestore = "18.2.0"
-    const val firebase_storage = "19.1.0"
+    const val firebase = "31.4.0"
+    const val firebase_auth = "21.2.0"
+    const val firebase_firestore = "24.4.5"
+    const val firebase_storage = "20.1.0"
     const val glide = "4.15.0"
     const val coroutines = "1.6.4"
     const val coroutinescore = "1.7.0"
     const val navigation = "2.5.3"
+    const val viewpager2 = "1.0.0"
 }
