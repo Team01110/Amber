@@ -75,4 +75,7 @@ dependencies {
     //Glide
     implementation(Dependencies.Glide.glide)
 
+    //DotsIndicator
+    implementation(Dependencies.DotsIndicator.dots_indicator)
+
 }

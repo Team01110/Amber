@@ -1,4 +1,3 @@
-
 plugins {
     id (Plugins.Kotlin.java_library)
     id (Plugins.Kotlin.jvm)

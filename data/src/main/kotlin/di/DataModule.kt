@@ -24,12 +24,7 @@ object DataModule {
         "Amber-db"
     ).build()
 
+    @Provides
     @Singleton
-    @Provides
-    fun provideSharedPreference(@ApplicationContext context: Context): SharedPreferences {
-        return context.getSharedPreferences("isShow", Context.MODE_PRIVATE)
-    }
-
-    @Provides
     fun amberDao(appDatabase: AppDatabase): AmberDao = appDatabase.amberDao()
 }

@@ -68,6 +68,10 @@ object Dependencies {
             ("androidx.navigation:navigation-fragment-ktx:${Versions.navigation}")
         const val navigation = ("androidx.navigation:navigation-ui-ktx:${Versions.navigation}")
     }
+
+    object DotsIndicator {
+        const val dots_indicator = ("com.tbuonomo:dotsindicator:${Versions.dots_indicator}")
+    }
 }
 
 object Versions {
@@ -85,8 +89,8 @@ object Versions {
     const val espresso = "3.5.1"
 
     //plugins
-    const val AGP = "7.3.1"
-    const val daggerHilt = "2.43"
+    const val AGP = "7.2.1"
+    const val daggerHilt = "2.44"
     const val kotlin = "1.8.0"
 
     //other impl
@@ -99,4 +103,5 @@ object Versions {
     const val coroutines = "1.6.4"
     const val coroutinescore = "1.7.0"
     const val navigation = "2.5.3"
+    const val dots_indicator = "4.3"
 }
