@@ -1,3 +1,4 @@
+
 plugins {
     id(Plugins.AGP.application)
     id(Plugins.Kotlin.android)
@@ -18,11 +19,10 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
     packagingOptions {
-        resources.excludes.add("META-INF/versions/9/previous-compilation-data.bin")
+        exclude("META-INF/DEPENDENCIES")
+        exclude("mozilla/public-suffix-list.txt")
     }
-
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -78,5 +78,4 @@ dependencies {
 
     //Glide
     implementation(Dependencies.Glide.glide)
-
 }

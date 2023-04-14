@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.amber.databinding.ItemHomeVpBinding
 import com.example.domain.model.AmberItem
 
@@ -25,7 +26,12 @@ class HomesAdapter() : ListAdapter<AmberItem, HomesAdapter.HomesViewHolder>(Note
 
     inner class HomesViewHolder(private val binding: ItemHomeVpBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(Model: AmberItem) {
+        fun bind(model: AmberItem) {
+            binding.tvProdukt.text = model.description
+            binding.tvSpeakers.text = model.title
+            Glide.with(binding.imgItemHome)
+                .load(model.image)
+                .into(binding.imgItemHome)
         }
     }
 

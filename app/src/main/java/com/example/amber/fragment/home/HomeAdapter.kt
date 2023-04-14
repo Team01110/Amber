@@ -5,6 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.amber.databinding.ItemHomeRvBinding
 import com.example.domain.model.AmberItem
 
@@ -25,8 +28,12 @@ class HomeAdapter : ListAdapter<AmberItem, HomeAdapter.HomeViewHolder>(NotesCall
 
     inner class HomeViewHolder(private val binding: ItemHomeRvBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(Model: AmberItem) {
-
+        fun bind(model: AmberItem) {
+            binding.tvBeosound1.text = model.title
+            binding.tvMani.text = model.price.toString()
+            Glide.with(binding.imgItem2Home)
+                .load(model.image)
+                .into(binding.imgItem2Home)
         }
     }
 
