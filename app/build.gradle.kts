@@ -19,10 +19,11 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+
     packagingOptions {
-        exclude("META-INF/DEPENDENCIES")
-        exclude("mozilla/public-suffix-list.txt")
+       resources.excludes.add("2 files found with path 'META-INF/gradle/incremental.annotation.processors'")
     }
+
     buildTypes {
         release {
             isMinifyEnabled = false

@@ -1,8 +1,3 @@
-buildscript {
-    dependencies {
-        classpath("com.android.tools.build:gradle:7.3.0")
-    }
-}
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
     id (Plugins.AGP.application) version Versions.AGP apply false
