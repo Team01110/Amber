@@ -7,5 +7,5 @@ import model.AmberEntity
 @Dao
 interface AmberDao {
     @Query("SELECT * FROM amber")
-    fun getAllAmber():List<AmberEntity>
+    suspend fun getAllAmber():List<AmberEntity>
 }

@@ -1,5 +1,17 @@
 <resources>
-    <string name="app_name">com.example.domain.model.Amber</string>
+    <string name="app_name">Amber</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title">Title Product</string>
+    <string name="_100_product">+100 Товаров</string>
+    <string name="_1_600">$1,600</string>
+    <string name="category">Категории</string>
+    <string name="recomendary">Рекомендуется для вас</string>
+    <string name="regist">Регистрация</string>
+    <string name="email">Email</string>
+    <string name="name">Имя</string>
+    <string name="password">Пароль</string>
+    <string name="confident">Создавая аккаунт, вы соглашаетесь с нашими правилами</string>
+    <string name="sign_up">зарегистрироваться</string>
+    <string name="sign_in">Уже есть аккаунт? Войти</string>
 </resources>

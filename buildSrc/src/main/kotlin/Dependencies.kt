@@ -116,4 +116,5 @@ object Versions {
     const val navigation = "2.5.3"
     const val viewpager2 = "1.0.0"
     const val dots_indicator = "4.3"
+
 }
