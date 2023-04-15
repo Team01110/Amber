@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "460686429733",
+    "project_id": "amber-f5b6d",
+    "storage_bucket": "amber-f5b6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:460686429733:android:950c943336c4509a89f9cc",
+        "android_client_info": {
+          "package_name": "com.example.amber"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "460686429733-ggargdsji1qbp0607lknoa270b62aplu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCa0fMcUcdO3RlLghpxnS2KmiyLRFE0VF8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "460686429733-am2sdqhr8i2l0ccnoij7ejgclrm1c5bs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

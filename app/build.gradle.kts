@@ -3,6 +3,7 @@ plugins {
     id(Plugins.Kotlin.android)
     id(Plugins.Kotlin.kapt)
     id (Plugins.DaggerHilt.hilt)
+    id(Plugins.AGP.google_service)
 }
 
 android {
@@ -54,6 +55,7 @@ dependencies {
     implementation(Dependencies.UI.viewmodel)
     implementation(Dependencies.UI.fragment)
     implementation(Dependencies.UI.stdlib)
+    implementation(Dependencies.Firebase.firebase_auth)
     testImplementation(Dependencies.UI.junit)
     androidTestImplementation(Dependencies.UI.test_junit)
     androidTestImplementation(Dependencies.UI.espresso)
@@ -74,7 +76,11 @@ dependencies {
     implementation(Dependencies.Nav.navigation)
 
     //Firebase
-    implementation(Dependencies.Firebase.firebase_bom)
+     implementation (Dependencies.Firebase.firebase_auth)
+    implementation (Dependencies.Firebase.firebase_bom)
+    implementation (Dependencies.Firebase.firebase_firestore)
+    implementation (Dependencies.Firebase.firebase_storage)
+
 
     //Glide
     implementation(Dependencies.Glide.glide)

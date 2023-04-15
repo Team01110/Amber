@@ -4,6 +4,7 @@ plugins {
     id (Plugins.Kotlin.android)
     id (Plugins.Kotlin.kapt)
     id (Plugins.DaggerHilt.hilt)
+    id("com.google.gms.google-services")
 }
 
 
@@ -42,6 +43,7 @@ dependencies {
     implementation (Dependencies.UI.core)
     implementation (Dependencies.UI.appcompat)
     implementation (Dependencies.UI.material)
+    implementation("com.google.firebase:firebase-auth-ktx:21.3.0")
     testImplementation (Dependencies.UI.junit)
     androidTestImplementation (Dependencies.UI.test_junit)
     androidTestImplementation (Dependencies.UI.espresso)
