@@ -47,7 +47,6 @@ dependencies {
     androidTestImplementation (Dependencies.UI.espresso)
     implementation(project(":domain"))
 
-
     //Room
     implementation (Dependencies.Room.room_runtime)
     implementation (Dependencies.Room.room_ktx)
