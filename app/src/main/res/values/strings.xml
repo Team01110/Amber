@@ -14,4 +14,10 @@
     <string name="confident">Создавая аккаунт, вы соглашаетесь с нашими правилами</string>
     <string name="sign_up">зарегистрироваться</string>
     <string name="sign_in">Уже есть аккаунт? Войти</string>
+    <string name="welcome">Добро пожаловать в Amber!</string>
+    <string name="the_best_products">Самые лучшие ювелирные товары</string>
+    <string name="convenient_management">Удобное управление</string>
+    <string name="dev_management">Наша команда разработчиков разрабатывала для вас самое удобное управление</string>
+    <string name="variety_of_goods">Многообразие товаров</string>
+    <string name="buy_goods">В нашем приложении вы можете самые разнообразные товары по хорошим ценам!</string>
 </resources>

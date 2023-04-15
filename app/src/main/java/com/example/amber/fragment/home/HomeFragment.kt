@@ -7,7 +7,6 @@ import com.example.amber.databinding.FragmentHomeBinding
 import com.example.amber.exseption.showToast
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class HomeFragment :
     BaseFragment<HomeViewModel, FragmentHomeBinding>(FragmentHomeBinding::inflate) {
     override val vm: HomeViewModel by viewModels()
