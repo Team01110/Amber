@@ -1,10 +1,11 @@
 package service
 
-import model.AmberEntity
+import com.example.domain.model.Ratings
+import model.ProductEntity
 import model.Rating
 import retrofit2.http.GET
 
 interface ApiService {
     @GET("products/category/jewelery")
-    suspend fun getImage():Rating<AmberEntity>
+    suspend fun getImage(): List<ProductEntity>
 }

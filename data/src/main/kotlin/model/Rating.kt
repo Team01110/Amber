@@ -1,7 +1,6 @@
 package model
 
-data class Rating<T>(
-    val hits: List<T>,
+data class Rating(
     val count: Int,
     val rate: Double
 )

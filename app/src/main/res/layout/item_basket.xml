@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="306dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
-    android:layout_marginEnd="20sp"
-    android:backgroundTint="@color/orange"
+    android:layout_marginTop="20dp"
+    android:layout_marginHorizontal="20dp"
+    android:backgroundTint="@color/basket_orange"
     app:cardCornerRadius="24dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,36 +18,36 @@
             android:layout_width="88dp"
             android:layout_height="124dp"
             android:layout_margin="12dp"
-            android:src="@drawable/img"
+            android:src="@color/purple_200"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_beosound"
+            android:id="@+id/tv_basket_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="@string/beosound"
+            android:text="@string/basket_title"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@+id/img_basket"
             app:layout_constraintTop_toTopOf="@+id/img_basket" />
 
         <TextView
-            android:id="@+id/tv_review"
+            android:id="@+id/tv_basket_review"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/review"
             android:textColor="@color/black"
             android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@id/tv_beosound"
-            app:layout_constraintStart_toStartOf="@id/tv_beosound"
-            app:layout_constraintTop_toBottomOf="@id/tv_beosound" />
+            app:layout_constraintStart_toEndOf="@id/tv_basket_title"
+            app:layout_constraintStart_toStartOf="@id/tv_basket_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_basket_title" />
 
         <TextView
-            android:id="@+id/tv_price"
+            android:id="@+id/tv_basket_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -54,9 +55,9 @@
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/tv_review"
-            app:layout_constraintStart_toStartOf="@id/tv_review"
-            app:layout_constraintTop_toBottomOf="@id/tv_review" />
+            app:layout_constraintStart_toEndOf="@id/tv_basket_review"
+            app:layout_constraintStart_toStartOf="@id/tv_basket_review"
+            app:layout_constraintTop_toBottomOf="@id/tv_basket_review" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_view"
@@ -70,11 +71,11 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <TextView
-                android:id="@+id/tv_4"
+                android:id="@+id/tv_basket_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="4"
+                android:text="1"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
@@ -83,8 +84,8 @@
         <ImageView
             android:id="@+id/btn_minus"
             android:layout_width="12dp"
-            android:layout_height="12dp"
-            android:layout_margin="10dp"
+            android:layout_height="22dp"
+            android:layout_margin="20dp"
             android:src="@drawable/btn_minus"
             app:layout_constraintBottom_toBottomOf="@id/card_view"
             app:layout_constraintEnd_toStartOf="@+id/card_view"

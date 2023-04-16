@@ -1,12 +1,8 @@
 package com.example.amber.fragment.basket
 
-import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import com.example.amber.base.BaseFragment
-import com.example.amber.base.BaseViewModel
 import com.example.amber.databinding.FragmentBasketBinding
-import com.example.amber.exseption.ShowTost
-import com.example.amber.fragment.home.HomeAdapter
 
 class BasketFragment() :
     BaseFragment<BasketViewModel, FragmentBasketBinding>(FragmentBasketBinding::inflate) {
@@ -24,8 +20,6 @@ class BasketFragment() :
         }, onSuccess = {
             binding.rvBasket.adapter = adapter
         }, onError = {
-            ShowTost(it)
-
         })
     }
 }

@@ -2,13 +2,9 @@ package base
 
 import com.example.domain.utils.ResultStatus
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import model.AmberEntity
-import model.Rating
 import retrofit2.HttpException
-import service.ApiService
 import java.io.IOException
 
 fun <T> doRequest(request: suspend ()-> T)= flow {

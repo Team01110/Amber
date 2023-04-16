@@ -20,4 +20,11 @@
     <string name="dev_management">Наша команда разработчиков разрабатывала для вас самое удобное управление</string>
     <string name="variety_of_goods">Многообразие товаров</string>
     <string name="buy_goods">В нашем приложении вы можете самые разнообразные товары по хорошим ценам!</string>
+
+    <string name="basket">корзина</string>
+    <string name="total">Общий:</string>
+    <string name="basket_title">Solid Gold Petite Micropave</string>
+    <string name="review">rating</string>
+    <string name="sum">сумма</string>
+    <string name="price">Цена</string>
 </resources>

@@ -14,17 +14,29 @@ class HomeFragment :
     private lateinit var adapterVp: HomeAdapterVp
 
     override fun initialize() {
+        adapterRv = HomeAdapterRv()
+        adapterVp = HomeAdapterVp()
         binding.rvHome.adapter = adapterRv
         binding.rvHome2.adapter = adapterVp
         vm.amberUseCase()
+        vm.recommentAmberUseCase()
     }
 
     override fun setupRequest() {
         vm.getListItem.collectState(onLoading = {
          binding.notesBar.isVisible = true
         }, onSuccess = {
-            adapterRv.submitList(it)
             adapterVp.submitList(it)
+            binding.notesBar.isVisible = false
+        }, onError = {
+            showToast(it)
+            binding.notesBar.isVisible = false
+        })
+
+        vm.recommentState.collectState(onLoading = {
+            binding.notesBar.isVisible = true
+        }, onSuccess = {
+            adapterRv.submitList(it)
             binding.notesBar.isVisible = false
         }, onError = {
             showToast(it)

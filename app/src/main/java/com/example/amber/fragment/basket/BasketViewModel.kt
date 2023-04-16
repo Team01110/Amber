@@ -3,7 +3,7 @@ package com.example.amber.fragment.basket
 import androidx.lifecycle.viewModelScope
 import com.example.amber.base.BaseViewModel
 import com.example.amber.fragment.utils.UiState
-import com.example.domain.model.AmberItem
+import com.example.domain.model.ProductItem
 import com.example.domain.usecase.GetAllAmberUseCase
 import com.example.domain.usecase.GetRecommenAmberUseCase
 import kotlinx.coroutines.Dispatchers
@@ -16,10 +16,10 @@ class BasketViewModel(
     private val getRecommenAmberUseCase: GetRecommenAmberUseCase
 ) : BaseViewModel() {
 
-    private val _amberState = MutableStateFlow<UiState<List<AmberItem>>>(UiState.Empty())
+    private val _amberState = MutableStateFlow<UiState<List<ProductItem>>>(UiState.Empty())
     val amberState = _amberState.asStateFlow()
 
-    private val _RecommenState = MutableStateFlow<UiState<List<AmberItem>>>(UiState.Empty())
+    private val _RecommenState = MutableStateFlow<UiState<List<ProductItem>>>(UiState.Empty())
     val recommenState = _RecommenState.asStateFlow()
 
     fun amberUseCase() {
