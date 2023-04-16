@@ -25,12 +25,6 @@ class OnBoardFragment : Fragment(), ItemClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val isShow: Boolean = App.prefs.isShow()
-        if (isShow) {
-            findNavController().navigate(R.id.launchFragment)
-        }
-
         App.prefs.changePreference()
         onBoard()
     }
