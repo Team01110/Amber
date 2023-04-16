@@ -19,13 +19,11 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-<<<<<<< HEAD
-=======
     packagingOptions {
         resources.excludes.add("META-INF/versions/9/previous-compilation-data.bin")
     }
 
->>>>>>> origin/Sapar
+
     buildTypes {
         release {
             isMinifyEnabled = false
