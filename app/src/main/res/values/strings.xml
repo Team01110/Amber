@@ -2,29 +2,10 @@
     <string name="app_name">Amber</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title">Title Product</string>
-    <string name="_100_product">+100 Товаров</string>
+    <string name="speakers">Speakers</string>
+    <string name="_100_produkt">100+Produkt</string>
+    <string name="beosound_1">Beosound 1</string>
     <string name="_1_600">$1,600</string>
-    <string name="category">Категории</string>
-    <string name="recomendary">Рекомендуется для вас</string>
-    <string name="regist">Регистрация</string>
-    <string name="email">Email</string>
-    <string name="name">Имя</string>
-    <string name="password">Пароль</string>
-    <string name="confident">Создавая аккаунт, вы соглашаетесь с нашими правилами</string>
-    <string name="sign_up">зарегистрироваться</string>
-    <string name="sign_in">Уже есть аккаунт? Войти</string>
-    <string name="welcome">Добро пожаловать в Amber!</string>
-    <string name="the_best_products">Самые лучшие ювелирные товары</string>
-    <string name="convenient_management">Удобное управление</string>
-    <string name="dev_management">Наша команда разработчиков разрабатывала для вас самое удобное управление</string>
-    <string name="variety_of_goods">Многообразие товаров</string>
-    <string name="buy_goods">В нашем приложении вы можете самые разнообразные товары по хорошим ценам!</string>
-
-    <string name="basket">корзина</string>
-    <string name="total">Общий:</string>
-    <string name="basket_title">Solid Gold Petite Micropave</string>
-    <string name="review">rating</string>
-    <string name="sum">сумма</string>
-    <string name="price">Цена</string>
+    <string name="kotegorii">Котегории</string>
+    <string name="recomenduet">Рекомендуется для вас</string>
 </resources>

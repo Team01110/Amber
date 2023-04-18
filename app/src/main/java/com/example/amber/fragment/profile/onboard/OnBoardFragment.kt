@@ -1,4 +1,4 @@
-package com.example.amber.fragment.onboard
+package com.example.amber.fragment.profile.onboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
