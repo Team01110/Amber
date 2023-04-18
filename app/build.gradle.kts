@@ -67,7 +67,7 @@ dependencies {
     implementation (Dependencies.Nav.navigation)
 
 //    //Firebase
-//    implementation (Dependencies.Firebase.firebase_auth)
+    implementation (Dependencies.Firebase.firebase_auth)
     implementation (Dependencies.Firebase.firebase_bom)
 //    implementation (Dependencies.Firebase.firebase_firestore)
 //    implementation (Dependencies.Firebase.firebase_storage)

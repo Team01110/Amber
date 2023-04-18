@@ -52,6 +52,8 @@ dependencies {
     implementation (Dependencies.Room.room_ktx)
     kapt (Dependencies.Room.room_compiler)
 
+
+
     //Retrofit
       implementation(Dependencies.Retrofit.retrofit)
     implementation(Dependencies.Retrofit.converter)
