@@ -3,6 +3,7 @@ object Plugins {
     object AGP {
         const val application = "com.android.application"
         const val library = "com.android.library"
+        const val google_service = "com.google.gms.google-services"
     }
 
     object Kotlin {
@@ -35,15 +36,18 @@ object Dependencies {
     }
 
     object Retrofit {
-        const val retrofit =  ("com.squareup.retrofit2:retrofit:${Versions.retrofit}")
-        const val converter =  ("com.squareup.retrofit2:converter-gson:${Versions.retrofit}")
+        const val retrofit = ("com.squareup.retrofit2:retrofit:${Versions.retrofit}")
+        const val converter = ("com.squareup.retrofit2:converter-gson:${Versions.retrofit}")
     }
 
-    object Firebase{
+    object Firebase {
         const val firebase_bom = ("com.google.firebase:firebase-bom:${Versions.firebase}")
-        const val firebase_auth = ("com.google.firebase:firebase-auth-ktx:${Versions.firebase_auth}")
-        const val firebase_firestore = ("com.google.firebase:firebase-firestore-ktx:${Versions.firebase_firestore}")
-        const val firebase_storage = ("com.google.firebase:firebase-storage-ktx:${Versions.firebase_storage}")
+        const val firebase_auth =
+            ("com.google.firebase:firebase-auth-ktx:${Versions.firebase_auth}")
+        const val firebase_firestore =
+            ("com.google.firebase:firebase-firestore-ktx:${Versions.firebase_firestore}")
+        const val firebase_storage =
+            ("com.google.firebase:firebase-storage-ktx:${Versions.firebase_storage}")
     }
 
 
@@ -53,7 +57,7 @@ object Dependencies {
         const val room_compiler = ("com.google.dagger:hilt-compiler:${Versions.room}")
     }
 
-    object Glide{
+    object Glide {
         const val glide = ("com.github.bumptech.glide:glide:${Versions.glide}")
     }
 
@@ -74,8 +78,9 @@ object Dependencies {
             ("androidx.navigation:navigation-fragment-ktx:${Versions.navigation}")
         const val navigation = ("androidx.navigation:navigation-ui-ktx:${Versions.navigation}")
     }
-    object viewpager2{
-        const val viewpager2 =  "androidx.viewpager2:viewpager2:${Versions.viewpager2}"
+
+    object viewpager2 {
+        const val viewpager2 = "androidx.viewpager2:viewpager2:${Versions.viewpager2}"
     }
 
     object DotsIndicator {
@@ -107,7 +112,7 @@ object Versions {
     const val retrofit = "2.9.0"
     const val room = "2.5.0"
     const val firebase = "31.4.0"
-    const val firebase_auth = "21.2.0"
+    const val firebase_auth = "21.3.0"
     const val firebase_firestore = "24.4.5"
     const val firebase_storage = "20.1.0"
     const val glide = "4.15.0"

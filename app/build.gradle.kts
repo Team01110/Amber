@@ -1,9 +1,9 @@
 plugins {
-    id (Plugins.AGP.application)
-    id (Plugins.Kotlin.android)
-    id (Plugins.Kotlin.kapt)
-    id("com.google.gms.google-services")
-//    id (Plugins.DaggerHilt.hilt)
+    id(Plugins.AGP.application)
+    id(Plugins.Kotlin.android)
+    id(Plugins.Kotlin.kapt)
+    id (Plugins.DaggerHilt.hilt)
+    id(Plugins.AGP.google_service)
 }
 
 android {
@@ -20,15 +20,19 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    packagingOptions {
-         resources.excludes.add("META-INF/versions/9/previous-compilation-data.bin")
-    }
-
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
+    }
+
+    packagingOptions {
+        resources.excludes.add("META-INF/versions/9/previous-compilation-data.bin")
+        resources.excludes.add("META-INF/gradle/incremental.annotation.processors")
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -44,37 +48,44 @@ android {
 
 dependencies {
 
-    implementation (Dependencies.UI.core)
-    implementation (Dependencies.UI.appcompat)
-    implementation (Dependencies.UI.material)
-    implementation (Dependencies.UI.constraintlayout)
-    implementation (Dependencies.UI.viewmodel)
-    implementation (Dependencies.UI.fragment)
-    implementation (Dependencies.UI.stdlib)
-    implementation("com.google.firebase:firebase-auth-ktx:21.0.3")
-    testImplementation (Dependencies.UI.junit)
-    androidTestImplementation (Dependencies.UI.test_junit)
-    androidTestImplementation (Dependencies.UI.espresso)
+    implementation(Dependencies.UI.core)
+    implementation(Dependencies.UI.appcompat)
+    implementation(Dependencies.UI.material)
+    implementation(Dependencies.UI.constraintlayout)
+    implementation(Dependencies.UI.viewmodel)
+    implementation(Dependencies.UI.fragment)
+    implementation(Dependencies.UI.stdlib)
+    implementation(Dependencies.Firebase.firebase_auth)
+    testImplementation(Dependencies.UI.junit)
+    androidTestImplementation(Dependencies.UI.test_junit)
+    androidTestImplementation(Dependencies.UI.espresso)
     implementation(project(":domain"))
 
+    //Hilt
+    implementation(Dependencies.DaggerHilt.hilt)
+    implementation(Dependencies.DaggerHilt.hilt_compiler)
+
     //Coroutine
-    implementation (Dependencies.Coroutine.coroutines)
+    implementation(Dependencies.Coroutine.coroutines)
 
-
+    //ViewPager2
+    implementation(Dependencies.viewpager2.viewpager2)
 
     //Navigation
-    implementation (Dependencies.Nav.navigation_fragment)
-    implementation (Dependencies.Nav.navigation)
+    implementation(Dependencies.Nav.navigation_fragment)
+    implementation(Dependencies.Nav.navigation)
 
-    implementation(Dependencies.DotsIndicator.dots_indicator)
-
-//    //Firebase
-    implementation (Dependencies.Firebase.firebase_auth)
+    //Firebase
+     implementation (Dependencies.Firebase.firebase_auth)
     implementation (Dependencies.Firebase.firebase_bom)
-//    implementation (Dependencies.Firebase.firebase_firestore)
-//    implementation (Dependencies.Firebase.firebase_storage)
+    implementation (Dependencies.Firebase.firebase_firestore)
+    implementation (Dependencies.Firebase.firebase_storage)
+
 
     //Glide
     implementation(Dependencies.Glide.glide)
+
+    //DotsIndicator
+    implementation(Dependencies.DotsIndicator.dots_indicator)
 
 }
