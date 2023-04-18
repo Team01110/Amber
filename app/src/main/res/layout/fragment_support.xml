@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/about_us"
+            android:id="@+id/tv_head_support_help"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
@@ -28,7 +28,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/card_name_app"
+            android:id="@+id/tv_support_name_app"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
@@ -43,13 +43,12 @@
 
 
     <TextView
-        android:id="@+id/tv_about_us"
+        android:id="@+id/tv_support_help"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="230dp"
-        android:text="Если у вас возникли вопросы или проблемы насчет нашего приложения, то просим вас написать по вот этому номеру:
-  +996 703 132 927"
+        android:text="@string/support_text"
         android:textColor="#0B1124"
         android:textSize="22sp"
         android:textStyle="normal"

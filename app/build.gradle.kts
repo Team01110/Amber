@@ -66,6 +66,8 @@ dependencies {
     implementation (Dependencies.Nav.navigation_fragment)
     implementation (Dependencies.Nav.navigation)
 
+    implementation(Dependencies.DotsIndicator.dots_indicator)
+
 //    //Firebase
     implementation (Dependencies.Firebase.firebase_auth)
     implementation (Dependencies.Firebase.firebase_bom)
