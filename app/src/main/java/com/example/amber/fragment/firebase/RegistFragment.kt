@@ -27,14 +27,14 @@ class RegistFragment :
 
     override fun listeners() {
 
-        binding.signIn.setOnClickListener {
+        binding.tvIfAccount.setOnClickListener {
             findNavController().navigate(R.id.action_registFragment_to_loginFragment)
         }
 
-        binding.btnSign.setOnClickListener {
-            val email = binding.edEmail.text.toString()
-            val password = binding.edPassword.text.toString()
-            val name = binding.edName.text.toString()
+        binding.button.setOnClickListener {
+            val email = binding.emailEt.text.toString()
+            val password = binding.passET.text.toString()
+            val name = binding.nickName.text.toString()
 
             val bundle = Bundle()
             bundle.putString("key", "value")

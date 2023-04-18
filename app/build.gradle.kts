@@ -77,9 +77,9 @@ dependencies {
 
     //Firebase
      implementation (Dependencies.Firebase.firebase_auth)
-    implementation (Dependencies.Firebase.firebase_bom)
-    implementation (Dependencies.Firebase.firebase_firestore)
-    implementation (Dependencies.Firebase.firebase_storage)
+     implementation (Dependencies.Firebase.firebase_bom)
+//    implementation (Dependencies.Firebase.firebase_firestore)
+//    implementation (Dependencies.Firebase.firebase_storage)
 
 
     //Glide
