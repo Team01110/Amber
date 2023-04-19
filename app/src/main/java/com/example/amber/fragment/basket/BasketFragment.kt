@@ -5,21 +5,14 @@ import com.example.amber.base.BaseFragment
 import com.example.amber.databinding.FragmentBasketBinding
 
 class BasketFragment() :
-    BaseFragment<BasketViewModel, FragmentBasketBinding>(FragmentBasketBinding::inflate) {
+    BaseFragment<FragmentBasketBinding>(FragmentBasketBinding::inflate) {
 
-    override val vm: BasketViewModel by viewModels()
     private lateinit var adapter: BasketAdapter
 
     override fun initialize() {
-        vm.amberUseCase()
+        //Тут мы получаем данные, так что тут не нужен viewmodel
     }
 
     override fun setupRequest() {
-        vm.amberState.collectState(onLoading = {
-
-        }, onSuccess = {
-            binding.rvBasket.adapter = adapter
-        }, onError = {
-        })
     }
 }

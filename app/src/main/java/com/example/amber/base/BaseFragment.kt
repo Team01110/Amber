@@ -13,12 +13,11 @@ import com.example.amber.fragment.utils.UiState
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-abstract class BaseFragment<VM : BaseViewModel, VB : ViewBinding>(
+abstract class BaseFragment<VB : ViewBinding>(
     private val bindingInflater
     : (layoutInflater: LayoutInflater) -> VB
 ) : Fragment() {
 
-    protected abstract val vm: VM
     private var _binding: VB? = null
     protected val binding get() = _binding!!
 
