@@ -37,4 +37,6 @@
     <string name="save_name">Введите имя</string>
     <string name="save_password">Введите пароль</string>
     <string name="save_email">Введите email</string>
+    <string name="found_50_results">FOUND 50 RESULTS</string>
+    <string name="search">Search</string>
 </resources>
