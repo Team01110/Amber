@@ -8,7 +8,7 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_view"
+        android:id="@+id/cv_support"
         android:layout_width="match_parent"
         android:layout_height="164dp"
         android:backgroundTint="#FFDCBC"
@@ -16,19 +16,19 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/about_us"
+            android:id="@+id/tv_support"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="40dp"
             android:layout_marginTop="30dp"
-            android:text="Помощь и поддержка"
+            android:text="@string/tv_support"
             android:textAlignment="center"
             android:textColor="#0B1124"
             android:textSize="32sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/card_name_app"
+            android:id="@+id/card_app"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
@@ -48,12 +48,11 @@
         android:layout_height="match_parent"
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="230dp"
-        android:text="Если у вас возникли вопросы или проблемы насчет нашего приложения, то просим вас написать по вот этому номеру:
-  +996 703 132 927"
+        android:text="@string/tv_about_us"
         android:textColor="#0B1124"
         android:textSize="22sp"
         android:textStyle="normal"
-        app:layout_constraintTop_toBottomOf="@id/card_view" />
+        app:layout_constraintTop_toBottomOf="@id/cv_support" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
