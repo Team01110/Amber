@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/save_email"
             android:inputType="textEmailAddress"
-            android:maxLength="20" />
+            android:maxLength="30" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout

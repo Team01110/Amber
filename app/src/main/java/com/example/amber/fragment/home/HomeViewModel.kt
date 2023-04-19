@@ -11,9 +11,11 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
+
 @HiltViewModel
-class HomeViewModel( private val getAllAmberUseCase: GetAllAmberUseCase,
-                     private val getRecommenAmberUseCase: GetRecommenAmberUseCase
+class HomeViewModel @Inject constructor(private val getAllAmberUseCase: GetAllAmberUseCase,
+                                        private val getRecommenAmberUseCase: GetRecommenAmberUseCase
 ):BaseViewModel() {
 
     private val _getListItem = MutableStateFlow<UiState<List<ProductItem>>>(UiState.Empty())
