@@ -36,7 +36,7 @@
         android:layout_marginStart="36dp"
         android:text="От"
         android:fontFamily="@font/dmsans_regular"
-        android:textColor="@color/black_70"
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@id/tv_title"
         android:layout_marginTop="56dp"
         app:layout_constraintStart_toStartOf="parent" />
@@ -144,7 +144,7 @@
                 android:layout_marginTop="16dp"
                 android:text="описание"
                 android:fontFamily="@font/dmsans_regular"
-                android:textColor="@color/black_70"
+                android:textColor="@color/black"
                 android:textSize="14dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_kindOfObject" />
