@@ -69,7 +69,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:strokeColor="@color/orangeg"
+        app:strokeColor="@color/bit_orange"
         app:strokeWidth="0.5dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
