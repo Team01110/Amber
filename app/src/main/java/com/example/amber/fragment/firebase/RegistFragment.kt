@@ -43,8 +43,15 @@ class RegistFragment :
                 firebaseAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener {
                         if (it.isSuccessful) {
-                            showToast("foirf")
-                            findNavController().navigate(R.id.action_registFragment_to_loginFragment)
+                            firebaseAuth.currentUser?.sendEmailVerification()
+                                ?.addOnSuccessListener {
+                                    showToast("Ссылка отправлена на ваш email!")
+                                    findNavController().navigate(R.id.action_registFragment_to_loginFragment)
+                                }
+                                ?.addOnFailureListener{
+                                    showToast(it.toString())
+                                }
+
                         } else {
                             showToast(it.exception.toString())
                         }

@@ -10,8 +10,8 @@ import com.example.amber.fragment.firebase.RegistrViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 class HomeFragment :
-    BaseFragment<HomeViewModel, FragmentHomeBinding>(FragmentHomeBinding::inflate) {
-    override val vm: HomeViewModel by viewModels()
+    BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
+    val vm: HomeViewModel by viewModels()
     private lateinit var adapterRv: HomeAdapterRv
     private lateinit var adapterVp: HomeAdapterVp
 

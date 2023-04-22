@@ -4,6 +4,7 @@ plugins {
     id(Plugins.Kotlin.kapt)
     id (Plugins.DaggerHilt.hilt)
     id(Plugins.AGP.google_service)
+    //id("org.jetbrains.kotlin.android")
 }
 
 android {
@@ -56,6 +57,9 @@ dependencies {
     implementation(Dependencies.UI.fragment)
     implementation(Dependencies.UI.stdlib)
     implementation(Dependencies.Firebase.firebase_auth)
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.4.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1")
     testImplementation(Dependencies.UI.junit)
     androidTestImplementation(Dependencies.UI.test_junit)
     androidTestImplementation(Dependencies.UI.espresso)
