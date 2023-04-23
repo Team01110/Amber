@@ -37,4 +37,15 @@
     <string name="save_name">Введите имя</string>
     <string name="save_password">Введите пароль</string>
     <string name="save_email">Введите email</string>
+
+    <string name="home">Главная</string>
+    <string name="search">Искать</string>
+    <string name="basket_">Корзина</string>
+    <string name="profile">Профиль</string>
+    <string name="help">Помощь и поддержка</string>
+
+    <string name="open_nav">Open</string>
+    <string name="close_nav">Close</string>
+
+
 </resources>

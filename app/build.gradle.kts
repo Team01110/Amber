@@ -56,6 +56,7 @@ dependencies {
     implementation(Dependencies.UI.fragment)
     implementation(Dependencies.UI.stdlib)
     implementation(Dependencies.Firebase.firebase_auth)
+    implementation(project(mapOf("path" to ":domain")))
     testImplementation(Dependencies.UI.junit)
     androidTestImplementation(Dependencies.UI.test_junit)
     androidTestImplementation(Dependencies.UI.espresso)

@@ -11,7 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 
 class RegistFragment :
-    BaseFragment<FragmentRegistBinding>(FragmentRegistBinding::inflate) {
+    BaseFragment<FragmentRegistBinding, Any?>(FragmentRegistBinding::inflate) {
 
     val vm: RegistrViewModel by lazy {
         ViewModelProvider(requireActivity())[RegistrViewModel::class.java]
