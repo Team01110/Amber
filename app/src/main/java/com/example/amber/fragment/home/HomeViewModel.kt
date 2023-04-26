@@ -14,9 +14,10 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val getAllAmberUseCase: GetAllAmberUseCase,
-                                        private val getRecommenAmberUseCase: GetRecommenAmberUseCase
-):BaseViewModel() {
+class HomeViewModel @Inject constructor(
+    private val getAllAmberUseCase: GetAllAmberUseCase,
+    private val getRecommenAmberUseCase: GetRecommenAmberUseCase
+) : BaseViewModel() {
 
     private val _getListItem = MutableStateFlow<UiState<List<ProductItem>>>(UiState.Empty())
     val getListItem = _getListItem.asStateFlow()
@@ -26,12 +27,12 @@ class HomeViewModel @Inject constructor(private val getAllAmberUseCase: GetAllAm
 
     fun amberUseCase() {
         viewModelScope.launch(Dispatchers.IO) {
-           getAllAmberUseCase().collectFlow(_getListItem)
+            getAllAmberUseCase().collectFlow(_getListItem)
         }
     }
 
     fun recommentAmberUseCase() {
-        viewModelScope.launch(Dispatchers.IO){
+        viewModelScope.launch(Dispatchers.IO) {
             getRecommenAmberUseCase().collectFlow(_recommentState)
         }
     }

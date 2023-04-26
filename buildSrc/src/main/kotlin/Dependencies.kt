@@ -86,6 +86,15 @@ object Dependencies {
     object DotsIndicator {
         const val dots_indicator = ("com.tbuonomo:dotsindicator:${Versions.dots_indicator}")
     }
+
+    object Google {
+        const val google_service_auth =
+            ("com.google.android.gms:play-services-auth:${Versions.google_service_auth}")
+
+        const val google_service = ("com.google.gms:google-services:${Versions.google_service}")
+
+    }
+
 }
 
 object Versions {
@@ -121,5 +130,7 @@ object Versions {
     const val navigation = "2.5.3"
     const val viewpager2 = "1.0.0"
     const val dots_indicator = "4.3"
+    const val google_service_auth = "20.5.0"
+    const val google_service = "4.3.15"
 
 }
