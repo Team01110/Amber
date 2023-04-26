@@ -16,6 +16,13 @@ object Plugins {
     object DaggerHilt {
         const val hilt = "com.google.dagger.hilt.android"
     }
+    object Google {
+        const val google_service_auth =
+            ("com.google.android.gms:play-services-auth:${Versions.google_service_auth}")
+
+        const val google_service = ("com.google.gms:google-services:${Versions.google_service}")
+
+    }
 
 
 }

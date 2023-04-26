@@ -62,6 +62,9 @@ dependencies {
     androidTestImplementation(Dependencies.UI.espresso)
     implementation(project(":domain"))
 
+    //google
+    implementation(Dependencies.Google.google_service_auth)
+
     //Hilt
     implementation(Dependencies.DaggerHilt.hilt)
     implementation(Dependencies.DaggerHilt.hilt_compiler)
