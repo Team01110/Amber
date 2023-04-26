@@ -56,10 +56,14 @@ dependencies {
     implementation(Dependencies.UI.fragment)
     implementation(Dependencies.UI.stdlib)
     implementation(Dependencies.Firebase.firebase_auth)
+    implementation(project(mapOf("path" to ":domain")))
     testImplementation(Dependencies.UI.junit)
     androidTestImplementation(Dependencies.UI.test_junit)
     androidTestImplementation(Dependencies.UI.espresso)
     implementation(project(":domain"))
+
+    //google
+    implementation(Dependencies.Google.google_service_auth)
 
     //Hilt
     implementation(Dependencies.DaggerHilt.hilt)

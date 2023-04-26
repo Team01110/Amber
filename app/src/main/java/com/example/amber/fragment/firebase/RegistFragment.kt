@@ -11,7 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 
 class RegistFragment :
-    BaseFragment<FragmentRegistBinding>(FragmentRegistBinding::inflate) {
+    BaseFragment<FragmentRegistBinding, Any?>(FragmentRegistBinding::inflate) {
 
     val vm: RegistrViewModel by lazy {
         ViewModelProvider(requireActivity())[RegistrViewModel::class.java]
@@ -43,8 +43,15 @@ class RegistFragment :
                 firebaseAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener {
                         if (it.isSuccessful) {
-                            showToast("foirf")
-                            findNavController().navigate(R.id.action_registFragment_to_loginFragment)
+                            firebaseAuth.currentUser?.sendEmailVerification()
+                                ?.addOnSuccessListener {
+                                    showToast("Ссылка отправлена на ваш email!")
+                                    findNavController().navigate(R.id.action_registFragment_to_loginFragment)
+                                }
+                                ?.addOnFailureListener{
+                                    showToast(it.toString())
+                                }
+
                         } else {
                             showToast(it.exception.toString())
                         }
