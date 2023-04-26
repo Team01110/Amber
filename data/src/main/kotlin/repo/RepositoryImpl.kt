@@ -11,10 +11,6 @@ import javax.inject.Inject
 class RepositoryImpl @Inject constructor
     (private val api: ApiService) : Repository {
     override fun getAllAmber(): Flow<ResultStatus<List<ProductItem>>> = doRequest {
-        api.getImage().map { it.toDomain() }
-    }
-
-    override fun getRecommenAmber(): Flow<ResultStatus<List<ProductItem>>> = doRequest {
-        api.getImage().map { it.toDomain() }
+        api.getJewelery().map { it.toDomain() }
     }
 }

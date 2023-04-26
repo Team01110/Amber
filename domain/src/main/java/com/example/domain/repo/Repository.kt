@@ -6,5 +6,4 @@ import kotlinx.coroutines.flow.Flow
 
 interface Repository {
     fun getAllAmber(): Flow<ResultStatus<List<ProductItem>>>
-    fun getRecommenAmber():Flow<ResultStatus<List<ProductItem>>>
 }
