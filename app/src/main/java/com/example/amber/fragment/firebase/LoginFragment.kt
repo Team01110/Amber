@@ -43,8 +43,13 @@ class LoginFragment : Fragment() {
 
                 firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                     if (it.isSuccessful) {
-                        findNavController().navigate(R.id.launchFragment)
+                        val verification = firebaseAuth.currentUser?.isEmailVerified
+                        if (verification == true) {
 
+                            findNavController().navigate(R.id.launchFragment)
+                        }else{
+                            showToast("Ссылка была отправлена на ваш email!")
+                        }
                     } else {
                         showToast(it.exception.toString())
                     }
