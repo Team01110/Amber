@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.amber.R
 import com.example.amber.databinding.FragmentLoginBinding
-import com.example.note.presentation.extencion.showToast
+import com.example.amber.exseption.showToast
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -31,13 +31,13 @@ class LoginFragment : Fragment() {
 
         firebaseAuth = FirebaseAuth.getInstance()
 
-        binding.textView.setOnClickListener {
+        binding.tvIfAccount.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registFragment)
         }
 
-        binding.button.setOnClickListener {
+        binding.signButton.setOnClickListener {
             val email = binding.emailEt.text.toString()
-            val password = binding.passET.text.toString()
+            val password = binding.passwordEt.text.toString()
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
 
