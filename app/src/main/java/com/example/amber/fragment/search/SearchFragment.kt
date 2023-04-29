@@ -5,5 +5,9 @@ import com.example.amber.databinding.FragmentSearchBinding
 
 
 class SearchFragment : BaseFragment<FragmentSearchBinding>(FragmentSearchBinding::inflate) {
-
+    override fun listeners() {
+        binding.icClear.setOnClickListener {
+            binding.edtSearch.text.clear()
+        }
+    }
 }
