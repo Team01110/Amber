@@ -7,8 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.amber.databinding.ItemBasketBinding
 import com.example.domain.model.ProductItem
+import com.example.domain.model.Ratings
 
-class BasketAdapter : RecyclerView.Adapter<BasketAdapter.BasketViewHolder>() {
+class BasketAdapter() : RecyclerView.Adapter<BasketAdapter.BasketViewHolder>() {
 
     private val list: List<ProductItem> = ArrayList()
     private var conunt = 0
@@ -28,7 +29,8 @@ class BasketAdapter : RecyclerView.Adapter<BasketAdapter.BasketViewHolder>() {
         RecyclerView.ViewHolder(binding.root) {
         fun onBing(model: ProductItem) {
             binding.tvBasketPrice.text = model.price.toString()
-            binding.tvBasketReview.text = model.description
+            binding.tvBasketReview.text = model.rating.count.toString()
+            binding.ratingBar.rating = model.rating.rate.toFloat()
             binding.tvBasketTitle.text = model.title
             Glide.with(binding.imgBasket)
                 .load(model.image)
