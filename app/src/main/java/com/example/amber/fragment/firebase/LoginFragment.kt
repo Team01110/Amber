@@ -18,7 +18,6 @@ import com.google.firebase.auth.FirebaseAuth
 
 
 class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate){
-
     private lateinit var firebaseAuth: FirebaseAuth
 
     private lateinit var googleSignInClient: GoogleSignInClient

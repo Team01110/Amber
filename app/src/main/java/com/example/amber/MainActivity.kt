@@ -32,13 +32,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navigationView.setNavigationItemSelectedListener(this)
 
         val toggle =
-            ActionBarDrawerToggle(this, drawerLayout, R.string.open_nav, R.string.close_nav)
+                ActionBarDrawerToggle(this, drawerLayout, R.string.open_nav, R.string.close_nav)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, HomeFragment()).commit()
+                    .replace(R.id.fragment_container, HomeFragment()).commit()
             navigationView.setCheckedItem(R.id.nav_home)
         }
 
@@ -54,22 +54,22 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_home -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, HomeFragment()).commit()
+                    .replace(R.id.fragment_container, HomeFragment()).commit()
 
             R.id.nav_search -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, SearchFragment()).commit()
+                    .replace(R.id.fragment_container, SearchFragment()).commit()
 
             R.id.nav_basket -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, BasketFragment()).commit()
+                    .replace(R.id.fragment_container, BasketFragment()).commit()
 
             R.id.nav_profile -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, ProfileFragment()).commit()
+                    .replace(R.id.fragment_container, ProfileFragment()).commit()
 
             R.id.nav_about -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, AboutUsFragment()).commit()
+                    .replace(R.id.fragment_container, AboutUsFragment()).commit()
 
             R.id.nav_help -> supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, SupportFragment()).commit()
+                    .replace(R.id.fragment_container, SupportFragment()).commit()
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
@@ -77,11 +77,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
-        }else{
+        } else {
             onBackPressedDispatcher.onBackPressed()
         }
     }
 }
+
 
