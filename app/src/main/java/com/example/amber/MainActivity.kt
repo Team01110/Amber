@@ -16,7 +16,9 @@ import com.example.amber.fragment.profile.ProfileFragment
 import com.example.amber.fragment.profile.SupportFragment
 import com.example.amber.fragment.search.SearchFragment
 import com.google.android.material.navigation.NavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var controller: NavController

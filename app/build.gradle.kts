@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 plugins {
     id(Plugins.AGP.application)
     id(Plugins.Kotlin.android)
@@ -35,11 +37,11 @@ android {
         resources.excludes.add("META-INF/gradle/incremental.annotation.processors")
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         viewBinding = true
@@ -47,7 +49,6 @@ android {
 }
 
 dependencies {
-
     implementation(Dependencies.UI.core)
     implementation(Dependencies.UI.appcompat)
     implementation(Dependencies.UI.material)
@@ -61,13 +62,14 @@ dependencies {
     androidTestImplementation(Dependencies.UI.test_junit)
     androidTestImplementation(Dependencies.UI.espresso)
     implementation(project(":domain"))
+    implementation(project(":data"))
 
     //google
     implementation(Dependencies.Google.google_service_auth)
 
     //Hilt
     implementation(Dependencies.DaggerHilt.hilt)
-    implementation(Dependencies.DaggerHilt.hilt_compiler)
+    kapt (Dependencies.DaggerHilt.hilt_compiler)
 
     //Coroutine
     implementation(Dependencies.Coroutine.coroutines)
@@ -82,14 +84,10 @@ dependencies {
     //Firebase
      implementation (Dependencies.Firebase.firebase_auth)
      implementation (Dependencies.Firebase.firebase_bom)
-//    implementation (Dependencies.Firebase.firebase_firestore)
-//    implementation (Dependencies.Firebase.firebase_storage)
-
 
     //Glide
     implementation(Dependencies.Glide.glide)
 
     //DotsIndicator
     implementation(Dependencies.DotsIndicator.dots_indicator)
-
 }

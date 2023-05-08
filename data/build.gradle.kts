@@ -1,3 +1,4 @@
+@file:Suppress("DEPRECATION")
 
 plugins {
     id (Plugins.AGP.library)
@@ -16,6 +17,7 @@ android {
         minSdk = AppConfig.minSdk
         targetSdk = AppConfig.targetSdk
 
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         val consumerProguardFiles = "consumer-rules.pro"
     }
@@ -30,11 +32,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 }
 
@@ -53,8 +55,6 @@ dependencies {
     implementation (Dependencies.Room.room_runtime)
     implementation (Dependencies.Room.room_ktx)
     kapt (Dependencies.Room.room_compiler)
-
-
 
     //Retrofit
       implementation(Dependencies.Retrofit.retrofit)

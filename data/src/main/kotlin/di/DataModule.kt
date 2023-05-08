@@ -1,7 +1,6 @@
 package di
 
 import android.content.Context
-import android.content.SharedPreferences
 import androidx.room.Room
 import dagger.Module
 import dagger.Provides
@@ -24,7 +23,7 @@ object DataModule {
     @Singleton
     fun AmberApi(): ApiService {
         return Retrofit.Builder()
-            .baseUrl("https://fakestoreapi.com/")
+            .baseUrl("http://amberjewelery.pythonanywhere.com")
             .addConverterFactory(GsonConverterFactory.create()).build()
             .create(ApiService::class.java)
     }

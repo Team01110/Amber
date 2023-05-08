@@ -2,9 +2,9 @@ package local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import model.ProductEntity
+import dto.MainResponceItem
 
-@Database(entities = [ProductEntity::class], version = 1)
+@Database(entities = [MainResponceItem::class], version = 1)
 abstract class AppDatabase: RoomDatabase() {
    abstract fun amberDao():AmberDao
 }

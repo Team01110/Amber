@@ -17,7 +17,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 
 
-class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate){
+class LoginFragment : BaseFragment<FragmentLoginBinding, Any?>(FragmentLoginBinding::inflate){
 
     private lateinit var firebaseAuth: FirebaseAuth
 

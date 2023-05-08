@@ -1,7 +1,6 @@
 package com.example.amber.fragment.firebase
 
 import android.os.Bundle
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.amber.R
 import com.example.amber.base.BaseFragment
@@ -13,9 +12,9 @@ import com.google.firebase.auth.FirebaseAuth
 class RegistFragment :
     BaseFragment<FragmentRegistBinding, Any?>(FragmentRegistBinding::inflate) {
 
-    val vm: RegistrViewModel by lazy {
-        ViewModelProvider(requireActivity())[RegistrViewModel::class.java]
-    }
+//    val vm: RegistrViewModel by lazy {
+//        ViewModelProvider(requireActivity())[RegistrViewModel::class.java]
+//    }
 
     private lateinit var firebaseAuth: FirebaseAuth
 
