@@ -5,7 +5,7 @@ import com.example.amber.base.BaseFragment
 import com.example.amber.databinding.FragmentBasketBinding
 
 class BasketFragment() :
-    BaseFragment<FragmentBasketBinding, Any?>(FragmentBasketBinding::inflate) {
+    BaseFragment<FragmentBasketBinding>(FragmentBasketBinding::inflate) {
 
     private lateinit var adapter: BasketAdapter
 

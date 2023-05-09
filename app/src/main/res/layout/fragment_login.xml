@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/save_email"
             android:inputType="textEmailAddress"
-            android:maxLength="20" />
+            android:maxLength="26" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -97,28 +97,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sign_button" />
 
-     <ImageButton
-         android:id="@+id/googlebt"
-         android:src="@mipmap/google"
-         android:layout_width="50dp"
-         android:layout_height="50dp"
-         android:layout_marginEnd="70dp"
-         android:layout_marginTop="70dp"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintHorizontal_bias="0.5"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintTop_toBottomOf="@+id/PasswordLayout"/>
+<!--     <ImageButton-->
+<!--         android:id="@+id/googlebt"-->
+<!--         android:src="@mipmap/google"-->
+<!--         android:layout_width="50dp"-->
+<!--         android:layout_height="50dp"-->
+<!--         android:layout_marginEnd="70dp"-->
+<!--         android:layout_marginTop="70dp"-->
+<!--         app:layout_constraintEnd_toEndOf="parent"-->
+<!--         app:layout_constraintHorizontal_bias="0.5"-->
+<!--         app:layout_constraintStart_toStartOf="parent"-->
+<!--         app:layout_constraintTop_toBottomOf="@+id/PasswordLayout"/>-->
 
-    <ImageButton
-        android:id="@+id/vkib"
-        android:src="@mipmap/vk"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="70dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PasswordLayout"/>
+<!--    <ImageButton-->
+<!--        android:id="@+id/vkib"-->
+<!--        android:src="@mipmap/vk"-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_marginStart="50dp"-->
+<!--        android:layout_marginTop="70dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/PasswordLayout"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

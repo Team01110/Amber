@@ -1,14 +1,6 @@
 package com.example.amber.fragment.home
 
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
-import com.example.amber.base.BaseFragment
-import com.example.amber.databinding.FragmentHomeBinding
-import com.example.amber.exseption.showToast
-import com.example.amber.fragment.firebase.RegistrViewModel
-import dagger.hilt.android.AndroidEntryPoint
 
 class HomeFragment : Fragment()
 //    BaseFragment<HomeViewModel, FragmentHomeBinding>(FragmentHomeBinding::inflate) {
@@ -22,14 +14,14 @@ class HomeFragment : Fragment()
 //        binding.rvHome.adapter = adapterRv
 //        binding.rvHome2.adapter = adapterVp
 
-        //Error
+//Error
 //        vm.amberUseCase()
 //        vm.recommentAmberUseCase()
 //    }
 //
 //    override fun setupRequest() {
 
-        //Error
+//Error
 //        vm.getListItem.collectState(onLoading = {
 //         binding.notesBar.isVisible = true
 //        }, onSuccess = {
