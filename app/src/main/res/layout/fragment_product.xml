@@ -18,41 +18,41 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:textSize="24dp"
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
+        android:fontFamily="@font/dmsans_medium"
         android:text="Title"
         android:textColor="@color/black"
-        android:fontFamily="@font/dmsans_medium"
+        android:textSize="24dp"
         app:layout_constraintBottom_toTopOf="@id/iv_product"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:textSize="12dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:text="От"
-        android:fontFamily="@font/dmsans_regular"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/tv_title"
         android:layout_marginTop="56dp"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:fontFamily="@font/dmsans_regular"
+        android:text="От"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
     <TextView
-        android:textSize="16dp"
         android:id="@+id/tv_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:text="Цена"
-        android:fontFamily="@font/dmsans_medium"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/tv_title"
         android:layout_marginTop="80dp"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:fontFamily="@font/dmsans_medium"
+        android:text="Цена"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
     <ImageView
         android:id="@+id/iv_product"
@@ -78,51 +78,26 @@
                 android:id="@+id/tv_rate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/dmsans_medium"
                 android:text="Оценка"
                 android:textColor="@color/black"
-                android:fontFamily="@font/dmsans_medium"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                app:layout_constraintBottom_toBottomOf="@id/tv_rate"
-                app:layout_constraintStart_toEndOf="@id/tv_rate"
-                app:layout_constraintTop_toTopOf="@id/tv_rate">
-
-
-                <ImageView
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:src="@drawable/ic_circle_24" />
-
-                <ImageView
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_marginStart="4dp"
-                    android:src="@drawable/ic_circle_24" />
-
-                <ImageView
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_marginStart="6dp"
-                    android:src="@drawable/ic_circle_24" />
-
-                <ImageView
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_marginStart="6dp"
-                    android:src="@drawable/ic_circle_24" />
-
-                <ImageView
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_marginStart="6dp"
-                    android:src="@drawable/ic_circle_24" />
-            </LinearLayout>
+                android:layout_marginStart="11dp"
+                android:numStars="5"
+                android:progressBackgroundTint="@color/gray"
+                android:progressTint="@color/yellow"
+                android:stepSize="0.5"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_rate"
+                app:layout_constraintStart_toEndOf="@+id/tv_rate"
+                app:layout_constraintTop_toTopOf="@+id/tv_rate" />
 
 
             <TextView
@@ -130,8 +105,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="44dp"
-                android:text="Вид вещи"
                 android:fontFamily="@font/dmsans_regular"
+                android:text="Вид вещи"
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -142,8 +117,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="описание"
                 android:fontFamily="@font/dmsans_regular"
+                android:text="описание"
                 android:textColor="@color/black"
                 android:textSize="14dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -159,8 +134,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@color/orange_amber"
-                    android:gravity="center"
                     android:fontFamily="@font/dmsans_medium"
+                    android:gravity="center"
                     android:text="добавить в корзину"
                     android:textColor="@color/white"
                     android:textSize="20sp" />
