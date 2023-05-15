@@ -2,8 +2,9 @@ plugins {
     id(Plugins.AGP.application)
     id(Plugins.Kotlin.android)
     id(Plugins.Kotlin.kapt)
-    id (Plugins.DaggerHilt.hilt)
+    id(Plugins.DaggerHilt.hilt)
     id(Plugins.AGP.google_service)
+    id("androidx.navigation.safeargs")
 }
 
 android {
@@ -24,8 +25,7 @@ android {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
         }
     }
@@ -80,8 +80,8 @@ dependencies {
     implementation(Dependencies.Nav.navigation)
 
     //Firebase
-     implementation (Dependencies.Firebase.firebase_auth)
-     implementation (Dependencies.Firebase.firebase_bom)
+    implementation(Dependencies.Firebase.firebase_auth)
+    implementation(Dependencies.Firebase.firebase_bom)
 //    implementation (Dependencies.Firebase.firebase_firestore)
 //    implementation (Dependencies.Firebase.firebase_storage)
 

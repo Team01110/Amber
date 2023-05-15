@@ -43,6 +43,9 @@
         <action
             android:id="@+id/action_loginFragment_to_registFragment"
             app:destination="@id/registFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/onBoardFragment"
