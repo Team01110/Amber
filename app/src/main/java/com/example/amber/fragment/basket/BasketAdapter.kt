@@ -6,14 +6,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.amber.databinding.ItemBasketBinding
-import com.example.domain.model.ProductItem
-import com.example.domain.model.Ratings
+import com.example.domain.model.Product
 
-class BasketAdapter() : RecyclerView.Adapter<BasketAdapter.BasketViewHolder>() {
+class BasketAdapter(
+    private val list: List<Product>,
+    private val viewModel: BasketViewModel
+) : RecyclerView.Adapter<BasketAdapter.BasketViewHolder>() {
 
-    private val list: List<ProductItem> = ArrayList()
-    private var conunt = 0
+    var conunt = 0
 
+    private var num = 0
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BasketViewHolder {
         val binding = ItemBasketBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return BasketViewHolder(binding)
@@ -27,20 +29,27 @@ class BasketAdapter() : RecyclerView.Adapter<BasketAdapter.BasketViewHolder>() {
 
     inner class BasketViewHolder(private val binding: ItemBasketBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun onBing(model: ProductItem) {
+        fun onBing(model: Product) {
             binding.tvBasketPrice.text = model.price.toString()
-            binding.tvBasketReview.text = model.rating.count.toString()
-            binding.ratingBar.rating = model.rating.rate.toFloat()
-            binding.tvBasketTitle.text = model.title
+            binding.tvBasketReview.text = model.rating.toString()
+            binding.ratingBar.rating = model.rating!!.toFloat()
+            binding.tvBasketTitle.text = model.titleProduct
+
             Glide.with(binding.imgBasket)
-                .load(model.image)
+                .load(model.imageProduct)
                 .into(binding.imgBasket)
 
             binding.btnPlus.setOnClickListener {
+                num++
+                viewModel.increment(num)
                 Pius(binding.btnPlus)
+
+
             }
 
             binding.btnMinus.setOnClickListener {
+                num--
+                viewModel.increment(num)
                 Minus(binding.btnMinus)
             }
         }

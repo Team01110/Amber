@@ -39,20 +39,31 @@
             android:textStyle="" />
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/img_item_vp"
-        android:layout_width="match_parent"
-        android:layout_height="318dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="50dp"
-        android:background="@color/purple_500"
-        android:elevation="11dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <androidx.cardview.widget.CardView
-        app:cardElevation="11dp"
+        app:cardCornerRadius="42dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginTop="100dp"
+        app:cardElevation="22dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/img_item_vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/img"
+            android:background="@drawable/background_img"
+            android:elevation="11dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_margin="20dp"
@@ -70,6 +81,7 @@
                 android:id="@+id/item_tv_title_vp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
                 android:gravity="center"
                 android:text="Titlte"
                 android:textColor="@color/black"

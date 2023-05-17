@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.amber.databinding.ItemHomeVpBinding
-import com.example.domain.model.ProductItem
+import com.example.domain.model.Product
 
-class HomeAdapterVp() : ListAdapter<ProductItem, HomeAdapterVp.HomesViewHolder>(NotesCallback()) {
+class HomeAdapterVp() : ListAdapter<Product, HomeAdapterVp.HomesViewHolder>(NotesCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomesViewHolder {
         val binding = ItemHomeVpBinding.inflate(
@@ -26,20 +26,20 @@ class HomeAdapterVp() : ListAdapter<ProductItem, HomeAdapterVp.HomesViewHolder>(
 
     inner class HomesViewHolder(private val binding: ItemHomeVpBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(model: ProductItem) {
-            binding.itemTvCountVp.text = model.rating.count.toString()
-            binding.itemTvTitleVp.text = model.title
+        fun bind(model: Product) {
+            binding.itemTvCountVp.text = model.rating
+            binding.itemTvTitleVp.text = model.titleProduct
             Glide.with(binding.imgItemVp)
-                .load(model.image)
+                .load(model.imageProduct)
                 .into(binding.imgItemVp)
         }
     }
 
-    class NotesCallback : DiffUtil.ItemCallback<ProductItem>() {
-        override fun areItemsTheSame(oldItem: ProductItem, newItem: ProductItem) =
+    class NotesCallback : DiffUtil.ItemCallback<Product>() {
+        override fun areItemsTheSame(oldItem: Product, newItem: Product) =
             oldItem == newItem
 
-        override fun areContentsTheSame(oldItem: ProductItem, newItem: ProductItem) =
+        override fun areContentsTheSame(oldItem: Product, newItem: Product) =
             oldItem == newItem
     }
 }

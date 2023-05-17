@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E48A49"
     tools:context=".fragment.launch.LaunchFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/img_launch"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:src="@drawable/amber"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_login_launch"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginHorizontal="20dp"
+        android:backgroundTint="#F3E66B"
+        android:text="Войти"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="12dp"
+        app:layout_constraintTop_toBottomOf="@id/img_launch" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_createacc_launch"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginHorizontal="20dp"
+        android:backgroundTint="#F3E66B"
+        android:text="Создать аккаунт"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:cornerRadius="12dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_login_launch" />
+</androidx.constraintlayout.widget.ConstraintLayout>

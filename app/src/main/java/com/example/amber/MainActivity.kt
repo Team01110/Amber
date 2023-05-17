@@ -8,22 +8,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
-import com.example.amber.fragment.basket.BasketFragment
-import com.example.amber.fragment.home.HomeFragment
-import com.example.amber.fragment.profile.AboutUsFragment
-import com.example.amber.fragment.profile.ProfileFragment
-import com.example.amber.fragment.profile.SupportFragment
-import com.example.amber.fragment.search.SearchFragment
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
-import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var drawerLayout: DrawerLayout
@@ -42,7 +32,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navigationView.setNavigationItemSelectedListener(this)
 
         val toggle =
-                ActionBarDrawerToggle(this, drawerLayout, R.string.open_nav, R.string.close_nav)
+            ActionBarDrawerToggle(this, drawerLayout, R.string.open_nav, R.string.close_nav)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
@@ -53,7 +43,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
         val image = findViewById<ImageView>(R.id.all_groups)
-        image.setOnClickListener{
+        image.setOnClickListener {
             drawerLayout.openDrawer(navigationView)
         }
 
@@ -74,7 +64,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             controller.navigate(R.id.onBoardFragment)
         }
 
-        header =  navigationView.getHeaderView(0)
+        header = navigationView.getHeaderView(0)
         val user = firebaseAuth.currentUser
         val tvName = header.findViewById<TextView>(R.id.tv_nav_title)
         val tvEmail = header.findViewById<TextView>(R.id.tv_nav_email)
