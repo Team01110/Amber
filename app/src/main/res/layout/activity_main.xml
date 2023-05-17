@@ -6,14 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/all_groups"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="40dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:src="@drawable/baseline_menu_open_24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+
+
 
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawer_layout"
@@ -43,10 +37,23 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/tool"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:elevation="4dp"
+                android:layout_height="80dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <ImageView
+                    android:id="@+id/all_groups"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_margin="20dp"
+                    android:src="@drawable/baseline_menu_open_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </androidx.appcompat.widget.Toolbar>
+
 
             <FrameLayout
                 android:id="@+id/fragment_container"

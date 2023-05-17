@@ -1,15 +1,23 @@
 package com.example.amber.fragment.home
 
+import android.os.Bundle
+import android.view.View
 import androidx.core.view.isVisible
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import com.example.amber.R
 import com.example.amber.base.BaseFragment
 import com.example.amber.databinding.FragmentHomeBinding
 import com.example.amber.exseption.showToast
+import com.google.android.material.navigation.NavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
-class HomeFragment : Fragment()
+class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate){
+
+
+}
 //    BaseFragment<HomeViewModel, FragmentHomeBinding>(FragmentHomeBinding::inflate) {
 //    override val vm: HomeViewModel by viewModels()
 //    private lateinit var adapterRv: HomeAdapterRv

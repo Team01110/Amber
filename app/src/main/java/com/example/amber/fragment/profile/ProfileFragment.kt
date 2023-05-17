@@ -5,6 +5,7 @@ import com.example.amber.R
 import com.example.amber.base.BaseFragment
 import com.example.amber.databinding.FragmentProfileBinding
 import com.example.amber.exseption.showToast
+import com.example.amber.fragment.home.HomeFragment
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -20,5 +21,18 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
         }
 
     }
+
+    override fun listeners() {
+        binding.tvProfileAboutUs.setOnClickListener{
+            controller.navigate(R.id.aboutUsFragment)
+        }
+        binding.tvProfileBasket.setOnClickListener{
+            controller.navigate(R.id.basketFragment)
+        }
+        binding.tvProfileHelp.setOnClickListener{
+            controller.navigate(R.id.supportFragment)
+        }
+    }
+
 
 }
