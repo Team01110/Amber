@@ -1,9 +1,14 @@
 package com.example.domain.repo
 
-import com.example.domain.model.ProductItem
+import com.example.domain.model.Category
+import com.example.domain.model.ItemModel
+import com.example.domain.model.Jewelery
+import com.example.domain.model.Product
 import com.example.domain.utils.ResultStatus
+import dagger.internal.codegen.validation.ValidationReport.Item
 import kotlinx.coroutines.flow.Flow
 
 interface Repository {
-    fun getAllAmber(): Flow<ResultStatus<List<ProductItem>>>
+    suspend fun getProducts(): Flow<ResultStatus<List<Product>>>
+    suspend fun getCategory(): Flow<ResultStatus<List<Category>>>
 }

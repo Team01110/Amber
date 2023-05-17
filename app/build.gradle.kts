@@ -10,7 +10,7 @@ plugins {
 
 android {
     namespace = "com.example.amber"
-    compileSdk = AppConfig.compileSdk
+    compileSdk = AppConfig.targetSdk
 
     defaultConfig {
         applicationId = "com.example.amber"
@@ -31,7 +31,6 @@ android {
             )
         }
     }
-
     packagingOptions {
         resources.excludes.add("META-INF/versions/9/previous-compilation-data.bin")
         resources.excludes.add("META-INF/gradle/incremental.annotation.processors")
@@ -47,7 +46,6 @@ android {
         viewBinding = true
     }
 }
-
 dependencies {
     implementation(Dependencies.UI.core)
     implementation(Dependencies.UI.appcompat)
@@ -61,8 +59,8 @@ dependencies {
     testImplementation(Dependencies.UI.junit)
     androidTestImplementation(Dependencies.UI.test_junit)
     androidTestImplementation(Dependencies.UI.espresso)
-    implementation(project(":domain"))
-    implementation(project(":data"))
+    api(project(":domain"))
+    api(project(":data"))
 
     //google
     implementation(Dependencies.Google.google_service_auth)
@@ -90,4 +88,5 @@ dependencies {
 
     //DotsIndicator
     implementation(Dependencies.DotsIndicator.dots_indicator)
+
 }

@@ -9,9 +9,4 @@ java {
 dependencies {
     implementation(Dependencies.Coroutine.coroutinescore)
     implementation(Dependencies.DaggerHilt.hilt_compiler)
-    implementation(project(":data"))
-    implementation(project(mapOf("path" to ":data")))
-    implementation(project(mapOf("path" to ":data")))
-    implementation("androidx.media2:media2-common:1.2.1")
-    implementation(project(mapOf("path" to ":data")))
 }
