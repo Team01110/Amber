@@ -25,7 +25,7 @@
         <TextView
             android:id="@+id/item_tv_title_vp"
             android:layout_width="170dp"
-            android:layout_height="24dp"
+            android:layout_height="28dp"
             android:layout_margin="5dp"
             android:gravity="center"
             android:text="@string/title"

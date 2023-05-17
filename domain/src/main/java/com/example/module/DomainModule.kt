@@ -1,7 +1,7 @@
 package com.example.module
 
 import com.example.domain.repo.Repository
-import com.example.domain.usecase.GetAllAmberUseCase
+import com.example.domain.usecase.GetProductsUseCase
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -10,7 +10,7 @@ import javax.inject.Singleton
 object DomainModule {
     @Provides
     @Singleton
-    fun provideUseCase(repository: Repository) = GetAllAmberUseCase(repository)
+    fun provideUseCase(repository: Repository) = GetProductsUseCase(repository)
 }
 
 //@Module

@@ -1,10 +1,11 @@
 package service
 
-import dto.MainResponceItem
-import dto.MainResponse
+import com.example.domain.model.Jewelery
 import retrofit2.http.GET
 
 interface ApiService {
-    @GET("/")
-    suspend fun getJewelery(): MainResponse<MainResponceItem>
+    @GET("/products")
+    suspend fun getProducts():Jewelery
+    @GET("/category")
+    fun getCategory():Jewelery
 }

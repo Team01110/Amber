@@ -50,7 +50,6 @@ abstract class BaseFragment<VB : ViewBinding, T>(
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 this@collectState.collect {
                     when (it) {
-                        is UiState.Empty -> {}
                         is UiState.Error -> {
                             onError(it.msg)
                         }

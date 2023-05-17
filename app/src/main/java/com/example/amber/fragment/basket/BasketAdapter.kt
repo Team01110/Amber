@@ -1,16 +1,15 @@
 package com.example.amber.fragment.basket
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.amber.databinding.ItemBasketBinding
-import com.example.domain.model.ProductItem
+import com.example.domain.model.ItemModel
 
 class BasketAdapter : RecyclerView.Adapter<BasketAdapter.BasketViewHolder>() {
 
-    private val list: List<ProductItem> = ArrayList()
+    private val list: List<ItemModel> = ArrayList()
     private var conunt = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BasketViewHolder {
@@ -26,35 +25,13 @@ class BasketAdapter : RecyclerView.Adapter<BasketAdapter.BasketViewHolder>() {
 
     inner class BasketViewHolder(private val binding: ItemBasketBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun onBing(model: ProductItem) {
+        fun onBing(model: ItemModel) {
             binding.tvBasketPrice.text = model.price.toString()
-            binding.tvBasketReview.text = model.description
-            binding.tvBasketTitle.text = model.title
+            binding.tvBasketReview.text = model.descriptionProduct
+            binding.tvBasketTitle.text = model.titleProduct
             Glide.with(binding.imgBasket)
-                .load(model.image)
+                .load(model.imageProduct)
                 .into(binding.imgBasket)
-
-            binding.btnPlus.setOnClickListener {
-                Pius(binding.btnPlus)
-            }
-
-            binding.btnMinus.setOnClickListener {
-                Minus(binding.btnMinus)
-            }
-        }
-
-        fun Pius(view: View) {
-            conunt += 1
-            display(conunt)
-        }
-
-        fun Minus(view: View) {
-            conunt -= 1
-            display(conunt)
-        }
-
-        private fun display(number: Int) {
-            binding.tvBasketCount.text = "" + number
         }
     }
 }

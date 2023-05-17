@@ -2,11 +2,10 @@ package local
 
 import androidx.room.Dao
 import androidx.room.Query
-import dto.MainResponceItem
-import dto.MainResponse
+import dto.Item
 
 @Dao
 interface AmberDao {
-    @Query("SELECT * FROM mainResponceItem ")
-    suspend fun getAllAmber():MainResponse<MainResponceItem>
+    @Query("SELECT * FROM Item ")
+    suspend fun getAllAmber():List<Item>
 }

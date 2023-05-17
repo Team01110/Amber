@@ -2,6 +2,7 @@ package di
 
 import android.content.Context
 import androidx.room.Room
+import com.example.data.BuildConfig.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,7 +24,7 @@ object DataModule {
     @Singleton
     fun AmberApi(): ApiService {
         return Retrofit.Builder()
-            .baseUrl("http://amberjewelery.pythonanywhere.com")
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create()).build()
             .create(ApiService::class.java)
     }
