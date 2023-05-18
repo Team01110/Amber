@@ -14,11 +14,11 @@
 
             <ImageView
                 android:id="@+id/item_img_rv"
-                android:layout_width="117dp"
-                android:layout_height="65dp"
+                android:layout_width="95dp"
+                android:layout_height="92dp"
                 android:layout_marginTop="41dp"
                 android:layout_marginBottom="104dp"
-                android:background="@color/purple_200"
+                android:background="#57525E"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +28,7 @@
                 android:id="@+id/item_tv_item_title_rv"
                 android:layout_width="113dp"
                 android:layout_height="30dp"
-                android:layout_margin="40dp"
+                android:layout_margin="20dp"
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:text="@string/title"

@@ -15,6 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:src="@drawable/ic_shape"
             android:layout_width="40dp"
             android:layout_height="40dp"/>
     </Toolbar>
@@ -23,7 +24,7 @@
         android:id="@+id/tv_category"
         android:layout_width="305dp"
         android:layout_height="26dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="@string/category"
         android:textColor="@color/black"
@@ -36,7 +37,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_home"
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="280dp"
         android:layout_marginTop="5dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
@@ -49,7 +50,7 @@
         android:id="@+id/tv_recomendary"
         android:layout_width="305dp"
         android:layout_height="26dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="@string/recomendary"
         android:textColor="@color/black"
@@ -63,7 +64,7 @@
         android:id="@+id/rv_home2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintTop_toBottomOf="@+id/tv_recomendary"
         app:spanCount="2"

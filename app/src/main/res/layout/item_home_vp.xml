@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="275dp"
-    android:layout_height="300dp"
+    android:layout_width="205dp"
+    android:layout_height="248dp"
     android:layout_margin="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:background="@drawable/vp_back"
-        android:layout_width="275dp"
+        android:layout_width="205dp"
         android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/img_item_vp"
-            android:layout_width="150dp"
-            android:layout_height="120dp"
+            android:layout_width="122dp"
+            android:layout_height="87dp"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="71dp"
-            android:background="@color/purple_500"
+            android:background="#57525E"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -25,7 +25,7 @@
         <TextView
             android:id="@+id/item_tv_title_vp"
             android:layout_width="170dp"
-            android:layout_height="28dp"
+            android:layout_height="30dp"
             android:layout_margin="5dp"
             android:gravity="center"
             android:text="@string/title"

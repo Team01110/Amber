@@ -4,19 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
-    android:layout_marginTop="20dp"
     android:layout_marginHorizontal="20dp"
+    android:layout_marginTop="20dp"
     android:backgroundTint="@color/bit_orange"
     app:cardCornerRadius="24dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="156dp">
 
         <ImageView
             android:id="@+id/img_basket"
-            android:layout_width="88dp"
-            android:layout_height="124dp"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
             android:layout_margin="12dp"
             android:src="@color/purple_200"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -85,11 +85,11 @@
             android:id="@+id/btn_minus"
             android:layout_width="12dp"
             android:layout_height="22dp"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:src="@drawable/btn_minus"
-            app:layout_constraintBottom_toBottomOf="@id/card_view"
+            app:layout_constraintBottom_toBottomOf="@+id/card_view"
             app:layout_constraintEnd_toStartOf="@+id/card_view"
-            app:layout_constraintTop_toTopOf="@id/card_view" />
+            app:layout_constraintTop_toTopOf="@+id/card_view" />
 
         <ImageView
             android:id="@+id/btn_plus"
