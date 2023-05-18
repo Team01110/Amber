@@ -30,7 +30,7 @@ class OnBoardFragment : Fragment(), ItemClickListener {
     }
 
     private fun onBoard() {
-        val boardAdapter = OnBoardAdapter(requireContext(),this)
+        val boardAdapter = OnBoardAdapter(requireContext(), this)
         binding.viewPager.adapter = boardAdapter
         binding.dotsIndicator.attachTo(binding.viewPager)
     }

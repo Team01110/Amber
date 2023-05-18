@@ -1,50 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_width="205dp"
+    android:layout_height="248dp"
+    android:layout_margin="20dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="275dp"
-        android:layout_height="match_parent"
-        android:layout_margin="20dp"
-        android:background="@drawable/vp_back">
+        android:background="@drawable/vp_back"
+        android:layout_width="205dp"
+        android:layout_height="match_parent">
 
-        <androidx.cardview.widget.CardView
-            app:cardCornerRadius="34dp"
-            android:id="@+id/card_view_vp"
-            android:layout_width="175dp"
-            android:layout_height="175dp"
+        <ImageView
+            android:id="@+id/img_item_vp"
+            android:layout_width="122dp"
+            android:layout_height="87dp"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="71dp"
+            android:background="#57525E"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/img_item_vp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/purple_500" />
-        </androidx.cardview.widget.CardView>
-
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/item_tv_title_vp"
-            android:layout_width="match_parent"
-            android:layout_height="28dp"
-            android:layout_marginHorizontal="36dp"
-            android:layout_marginTop="5dp"
+            android:layout_width="170dp"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
             android:gravity="center"
-            android:maxLines="1"
-            android:ellipsize="end"
             android:text="@string/title"
             android:textColor="@color/black"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/card_view_vp"
-            app:layout_constraintStart_toStartOf="@+id/card_view_vp"
-            app:layout_constraintTop_toBottomOf="@+id/card_view_vp" />
+            app:layout_constraintEnd_toEndOf="@+id/img_item_vp"
+            app:layout_constraintStart_toStartOf="@+id/img_item_vp"
+            app:layout_constraintTop_toBottomOf="@+id/img_item_vp" />
 
         <TextView
             android:id="@+id/item_tv_count_vp"
