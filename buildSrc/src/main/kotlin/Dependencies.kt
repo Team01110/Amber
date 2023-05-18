@@ -16,15 +16,12 @@ object Plugins {
     object DaggerHilt {
         const val hilt = "com.google.dagger.hilt.android"
     }
+
     object Google {
         const val google_service_auth =
             ("com.google.android.gms:play-services-auth:${Versions.google_service_auth}")
-
         const val google_service = ("com.google.gms:google-services:${Versions.google_service}")
-
     }
-
-
 }
 
 object Dependencies {
@@ -56,7 +53,6 @@ object Dependencies {
         const val firebase_storage =
             ("com.google.firebase:firebase-storage-ktx:${Versions.firebase_storage}")
     }
-
 
     object Room {
         const val room_runtime = ("androidx.room:room-runtime:${Versions.room}")
@@ -99,9 +95,7 @@ object Dependencies {
             ("com.google.android.gms:play-services-auth:${Versions.google_service_auth}")
 
         const val google_service = ("com.google.gms:google-services:${Versions.google_service}")
-
     }
-
 }
 
 object Versions {
@@ -120,7 +114,7 @@ object Versions {
 
     //plugins
     const val AGP = "7.4.2"
-    const val daggerHilt = "2.44"
+    const val daggerHilt = "2.45"
     const val kotlin = "1.8.0"
     const val kotlin_jvm = "1.8.0"
 

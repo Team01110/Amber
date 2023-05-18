@@ -16,7 +16,7 @@ import com.example.amber.fragment.utils.UiState
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-abstract class BaseFragment<VB : ViewBinding>(
+abstract class BaseFragment<VB : ViewBinding, T>(
     private val bindingInflater
     : (layoutInflater: LayoutInflater) -> VB
 ) : Fragment() {
@@ -60,7 +60,6 @@ abstract class BaseFragment<VB : ViewBinding>(
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 this@collectState.collect {
                     when (it) {
-                        is UiState.Empty -> {}
                         is UiState.Error -> {
                             onError(it.msg)
                         }

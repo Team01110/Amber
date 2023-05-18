@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import com.bumptech.glide.Glide
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.amber.databinding.ItemHomeRvBinding
 import com.example.domain.model.Product
 
@@ -28,8 +28,7 @@ class HomeAdapterRv : ListAdapter<Product, HomeAdapterRv.HomeViewHolder>(NotesCa
         RecyclerView.ViewHolder(binding.root) {
         fun bind(model: Product) {
             binding.itemTvItemTitleRv.text = model.titleProduct
-            binding.itemTvPriceRv.text = model.price.toString()
-
+            binding.itemTvPriceRv.text = model.price
             Glide.with(binding.itemImgRv)
                 .load(model.imageProduct)
                 .into(binding.itemImgRv)

@@ -1,60 +1,38 @@
 package com.example.amber.fragment.home
 
-import android.os.Bundle
-import android.view.View
-import androidx.core.view.isVisible
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.Fragment
+import android.util.Log
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
-import com.example.amber.R
+import androidx.lifecycle.lifecycleScope
 import com.example.amber.base.BaseFragment
 import com.example.amber.databinding.FragmentHomeBinding
-import com.example.amber.exseption.showToast
-import com.google.android.material.navigation.NavigationView
+import com.example.amber.fragment.utils.UiState
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
-class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate){
+@AndroidEntryPoint
+class HomeFragment : BaseFragment<FragmentHomeBinding, Any?>(FragmentHomeBinding::inflate) {
+    private val vm: HomeViewModel by viewModels()
+    private val adapterVp: HomeAdapterRv by lazy { HomeAdapterRv() }
+    private val adapterRv: HomeAdapterVp by lazy { HomeAdapterVp() }
 
+    override fun setupRequest() {
+        lifecycleScope.launch {
+            vm.state.collect {
+                when (it) {
+                    is UiState.Error -> {
+                        Log.e("ololo", "setupRequest:{${it.msg}}")
+                    }
 
+                    is UiState.Loading -> {}
+
+                    is UiState.Success -> {
+                        binding.rvHome.adapter = adapterRv
+                        binding.rvHome2.adapter = adapterVp
+                        adapterRv.submitList(it.data)
+                        adapterVp.submitList(it.data)
+                    }
+                }
+            }
+        }
+    }
 }
-//    BaseFragment<HomeViewModel, FragmentHomeBinding>(FragmentHomeBinding::inflate) {
-//    override val vm: HomeViewModel by viewModels()
-//    private lateinit var adapterRv: HomeAdapterRv
-//    private lateinit var adapterVp: HomeAdapterVp
-//
-//    override fun initialize() {
-//        adapterRv = HomeAdapterRv()
-//        adapterVp = HomeAdapterVp()
-//        binding.rvHome.adapter = adapterRv
-//        binding.rvHome2.adapter = adapterVp
-
-        //Error
-//        vm.amberUseCase()
-//        vm.recommentAmberUseCase()
-//    }
-//
-//    override fun setupRequest() {
-
-        //Error
-//        vm.getListItem.collectState(onLoading = {
-//         binding.notesBar.isVisible = true
-//        }, onSuccess = {
-//            adapterVp.submitList(it)
-//            binding.notesBar.isVisible = false
-//        }, onError = {
-//            showToast(it)
-//            binding.notesBar.isVisible = false
-//        })
-//
-//        vm.recommentState.collectState(onLoading = {
-//            binding.notesBar.isVisible = true
-//        }, onSuccess = {
-//            adapterRv.submitList(it)
-//            binding.notesBar.isVisible = false
-//        }, onError = {
-//            showToast(it)
-//            binding.notesBar.isVisible = false
-//        })
-//    }
-//}

@@ -9,26 +9,26 @@ import com.bumptech.glide.Glide
 import com.example.amber.databinding.ItemHomeVpBinding
 import com.example.domain.model.Product
 
-class HomeAdapterVp() : ListAdapter<Product, HomeAdapterVp.HomesViewHolder>(NotesCallback()) {
+class HomeAdapterVp : ListAdapter<Product, HomeAdapterVp.HomeViewHolder>(NotesCallback()) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomesViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
         val binding = ItemHomeVpBinding.inflate(
             LayoutInflater.from(parent.context),
             parent, false
         )
-        return HomesViewHolder(binding)
+        return HomeViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: HomesViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
         val model = getItem(position)
         holder.bind(model)
     }
 
-    inner class HomesViewHolder(private val binding: ItemHomeVpBinding) :
+    inner class HomeViewHolder(private val binding: ItemHomeVpBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(model: Product) {
-            binding.itemTvCountVp.text = model.rating
             binding.itemTvTitleVp.text = model.titleProduct
+            binding.itemTvCountVp.text = model.rating
             Glide.with(binding.imgItemVp)
                 .load(model.imageProduct)
                 .into(binding.imgItemVp)
