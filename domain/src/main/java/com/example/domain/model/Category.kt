@@ -2,5 +2,6 @@ package com.example.domain.model
 
 data class Category(
     val items: List<ItemModel>,
-    val titleCategory: String
+    val titleCategory: String,
+    val imageCategory: String
 )

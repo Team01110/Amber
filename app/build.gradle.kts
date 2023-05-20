@@ -35,11 +35,11 @@ android {
         resources.excludes.add("META-INF/gradle/incremental.annotation.processors")
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
     buildFeatures {
         viewBinding = true
@@ -61,13 +61,15 @@ dependencies {
     androidTestImplementation(Dependencies.UI.test_junit)
     androidTestImplementation(Dependencies.UI.espresso)
     implementation(project(":domain"))
+    api(project(":domain"))
+    api(project(":data"))
 
     //google
     implementation(Dependencies.Google.google_service_auth)
 
     //Hilt
     implementation(Dependencies.DaggerHilt.hilt)
-    implementation(Dependencies.DaggerHilt.hilt_compiler)
+    kapt(Dependencies.DaggerHilt.hilt_compiler)
 
     //Coroutine
     implementation(Dependencies.Coroutine.coroutines)

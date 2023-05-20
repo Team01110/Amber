@@ -10,14 +10,14 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding, Any?>(FragmentHomeBinding::inflate) {
+class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
     private val vm: HomeViewModel by viewModels()
-    private val adapterVp: HomeAdapterRv by lazy { HomeAdapterRv() }
-    private val adapterRv: HomeAdapterVp by lazy { HomeAdapterVp() }
+    private val adapterRv: HomeAdapterRv by lazy { HomeAdapterRv() }
+    private val adapterVp: HomeAdapterVp by lazy { HomeAdapterVp() }
 
     override fun setupRequest() {
         lifecycleScope.launch {
-            vm.state.collect {
+            vm.stateProduct.collect {
                 when (it) {
                     is UiState.Error -> {
                         Log.e("ololo", "setupRequest:{${it.msg}}")
@@ -26,13 +26,28 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, Any?>(FragmentHomeBinding
                     is UiState.Loading -> {}
 
                     is UiState.Success -> {
-                        binding.rvHome.adapter = adapterRv
-                        binding.rvHome2.adapter = adapterVp
+                        binding.rvHome2.adapter = adapterRv
                         adapterRv.submitList(it.data)
-                        adapterVp.submitList(it.data)
                     }
                 }
             }
         }
+            lifecycleScope.launch {
+                vm.stateCategory.collect {
+                    when (it) {
+                        is UiState.Error -> {
+                            Log.e("ololo", "setupRequest:{${it.msg}}")
+                        }
+
+                        is UiState.Loading -> {}
+
+                        is UiState.Success -> {
+                            binding.rvHome.adapter = adapterVp
+                            adapterVp.submitList(it.data)
+                        }
+                    }
+                }
+            }
+
     }
 }

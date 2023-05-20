@@ -16,7 +16,7 @@ import com.example.amber.fragment.utils.UiState
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-abstract class BaseFragment<VB : ViewBinding, T>(
+abstract class BaseFragment<VB : ViewBinding>(
     private val bindingInflater
     : (layoutInflater: LayoutInflater) -> VB
 ) : Fragment() {

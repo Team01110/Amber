@@ -7,5 +7,5 @@ interface ApiService {
     @GET("/products")
     suspend fun getProducts():Jewelery
     @GET("/category")
-    fun getCategory():Jewelery
+    suspend fun getCategory():Jewelery
 }

@@ -5,8 +5,6 @@ import androidx.lifecycle.switchMap
 import androidx.lifecycle.viewModelScope
 import com.example.amber.base.BaseViewModel
 import com.example.amber.fragment.utils.UiState
-import com.example.domain.usecase.GetAllAmberUseCase
-import com.example.domain.usecase.GetRecommenAmberUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

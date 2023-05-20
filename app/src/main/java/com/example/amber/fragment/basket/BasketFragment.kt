@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.amber.base.BaseFragment
 import com.example.amber.databinding.FragmentBasketBinding
 import com.example.domain.model.Category
+import com.example.domain.model.ItemModel
 import com.example.domain.model.Jewelery
 import com.example.domain.model.Product
 
@@ -25,7 +26,7 @@ class BasketFragment() :
             binding.tvAllPrice.text = (num*it).toString()
         }
 //        val list = mutableListOf<Jewelery>()
-        val lists = mutableListOf<Product>()
+        val lists = mutableListOf<ItemModel>()
 //        lists.add(
 //            Product(
 //                "category",
