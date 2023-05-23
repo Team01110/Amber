@@ -1,18 +1,14 @@
 package com.example.amber.fragment.basket
 
-import android.os.Bundle
-import android.view.View
-import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import com.example.amber.base.BaseFragment
 import com.example.amber.databinding.FragmentBasketBinding
-import com.example.domain.model.Category
-import com.example.domain.model.ItemModel
-import com.example.domain.model.Jewelery
+import com.example.amber.exseption.showToast
+import com.example.amber.fragment.product.ProductFragment
 import com.example.domain.model.Product
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class BasketFragment() :
     BaseFragment<FragmentBasketBinding>(FragmentBasketBinding::inflate) {
 
@@ -20,37 +16,35 @@ class BasketFragment() :
     private lateinit var adapter: BasketAdapter
     private val viewModel: BasketViewModel by viewModels()
 
-    private val num = 100
+    override fun setupRequest() {
+        viewModel.getAllProductss()
+        viewModel.getAllproduct.collectState(onLoading = {
+        }, onError = {
+            showToast(it)
+        }, onSuccess = {
+            adapter.addItem(it)
+        })
+    }
+
     override fun initialize() {
-        viewModel.counting.observe(viewLifecycleOwner){
-            binding.tvAllPrice.text = (num*it).toString()
+
+
+        if (arguments != null) {
+            val product =
+                requireArguments().getSerializable(ProductFragment.KEY_TO_BASKET) as Product
+            viewModel.counting.observe(viewLifecycleOwner) {
+                binding.tvAllPrice.text = (product.price.toInt() * it).toString()
+            }
         }
-//        val list = mutableListOf<Jewelery>()
-        val lists = mutableListOf<ItemModel>()
-//        lists.add(
-//            Product(
-//                "category",
-//                "des",
-//                a.toString(),
-//                "4.5",
-//                "ddd",
-//        )
-//        )
-//        val listss = mutableListOf<Category>()
-//        list.add(Jewelery(listss,lists))
-        adapter = BasketAdapter(lists, viewModel)
+
+
+        adapter = BasketAdapter(viewModel)
         binding.rvBasket.adapter = adapter
 
     }
 
-    override fun setupRequest() {
-        viewModel.counting.observe(viewLifecycleOwner){
-            binding.tvAllPrice.text = (num*it).toString()
-        }
-    }
-
     override fun listeners() {
-        binding.btnArrow.setOnClickListener{
+        binding.btnArrow.setOnClickListener {
             controller.navigateUp()
         }
     }
