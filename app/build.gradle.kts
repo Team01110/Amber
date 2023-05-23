@@ -4,6 +4,7 @@ plugins {
     id(Plugins.Kotlin.kapt)
     id (Plugins.DaggerHilt.hilt)
     id(Plugins.AGP.google_service)
+
 }
 
 android {
@@ -71,8 +72,14 @@ dependencies {
     implementation(Dependencies.DaggerHilt.hilt)
     kapt(Dependencies.DaggerHilt.hilt_compiler)
 
+    //Room
+    implementation(Dependencies.Room.room_runtime)
+    implementation(Dependencies.Room.room_ktx)
+    kapt(Dependencies.Room.room_compiler)
+
     //Coroutine
     implementation(Dependencies.Coroutine.coroutines)
+    implementation(Dependencies.Coroutine.coroutinescore)
 
     //ViewPager2
     implementation(Dependencies.viewpager2.viewpager2)

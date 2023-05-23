@@ -9,12 +9,18 @@ import com.example.amber.databinding.ItemBasketBinding
 import com.example.domain.model.ItemModel
 import com.example.domain.model.Product
 
-class BasketAdapter(private val list: List<ItemModel>,
-                    private val viewModel: BasketViewModel) : RecyclerView.Adapter<BasketAdapter.BasketViewHolder>() {
+class BasketAdapter(private val viewModel: BasketViewModel) : RecyclerView.Adapter<BasketAdapter.BasketViewHolder>() {
+    private var list: List<Product> = listOf<Product>()
 
     var conunt = 0
 
     private var num = 0
+
+
+    fun addItem(items: List<Product>) {
+        this.list = items as ArrayList<Product>
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BasketViewHolder {
         val binding = ItemBasketBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -29,10 +35,10 @@ class BasketAdapter(private val list: List<ItemModel>,
 
     inner class BasketViewHolder(private val binding: ItemBasketBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun onBing(model: ItemModel) {
-            binding.tvBasketPrice.text = model.price.toString()
-            binding.tvBasketReview.text = model.descriptionProduct
-            binding.tvBasketTitle.text = model.titleProduct
+        fun onBing(model: Product) {
+            binding.tvBasketPrice.text = model.descriptionProduct
+            binding.tvBasketTitle.text = model.price
+            binding.ratingBar.rating = model.rating.toFloat()
             Glide.with(binding.imgBasket)
                 .load(model.imageProduct)
                 .into(binding.imgBasket)

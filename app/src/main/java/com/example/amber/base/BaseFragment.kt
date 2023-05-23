@@ -70,6 +70,7 @@ abstract class BaseFragment<VB : ViewBinding>(
                             if (it.data != null)
                                 onSuccess(it.data)
                         }
+                        else -> {}
                     }
                 }
             }

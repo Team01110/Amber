@@ -37,6 +37,7 @@ object Dependencies {
         const val junit = ("junit:junit:${Versions.junit}")
         const val test_junit = ("androidx.test.ext:junit:${Versions.test_junit}")
         const val espresso = ("androidx.test.espresso:espresso-core:${Versions.espresso}")
+        const val bottomnav = ("implementation 'nl.joery.animatedbottombar:library:1.1.0")
     }
 
     object Retrofit {
@@ -57,7 +58,7 @@ object Dependencies {
     object Room {
         const val room_runtime = ("androidx.room:room-runtime:${Versions.room}")
         const val room_ktx = ("androidx.room:room-ktx:${Versions.room}")
-        const val room_compiler = ("com.google.dagger:hilt-compiler:${Versions.room}")
+        const val room_compiler = ("androidx.room:room-compiler:${Versions.room}")
     }
 
     object Glide {

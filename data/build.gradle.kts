@@ -9,6 +9,7 @@ plugins {
 }
 
 android {
+
     namespace = "com.example.data"
     compileSdk = AppConfig.targetSdk
 

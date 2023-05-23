@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.example.amber.databinding.ItemHomeRvBinding
 import com.example.domain.model.Product
 
-class HomeAdapterRv : ListAdapter<Product, HomeAdapterRv.HomeViewHolder>(NotesCallback()) {
+class HomeAdapterRv(val click:(product: Product) -> Unit) : ListAdapter<Product, HomeAdapterRv.HomeViewHolder>(NotesCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
         val binding = ItemHomeRvBinding.inflate(
@@ -22,6 +22,9 @@ class HomeAdapterRv : ListAdapter<Product, HomeAdapterRv.HomeViewHolder>(NotesCa
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
         val model = getItem(position)
         holder.bind(model)
+        holder.itemView.setOnClickListener{
+            click(model)
+        }
     }
 
     inner class HomeViewHolder(private val binding: ItemHomeRvBinding) :
