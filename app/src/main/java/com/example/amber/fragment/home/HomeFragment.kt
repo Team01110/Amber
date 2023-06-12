@@ -1,6 +1,7 @@
 package com.example.amber.fragment.home
 
 import android.util.Log
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.amber.base.BaseFragment
@@ -21,11 +22,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, Any?>(FragmentHomeBinding
                 when (it) {
                     is UiState.Error -> {
                         Log.e("ololo", "setupRequest:{${it.msg}}")
+                        binding.notesBar.isVisible = false
                     }
 
-                    is UiState.Loading -> {}
+                    is UiState.Loading -> {
+                        binding.notesBar.isVisible = true
+                    }
 
                     is UiState.Success -> {
+                        binding.notesBar.isVisible = false
                         binding.rvHome.adapter = adapterRv
                         binding.rvHome2.adapter = adapterVp
                         adapterRv.submitList(it.data)
