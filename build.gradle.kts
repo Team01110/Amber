@@ -1,9 +1,11 @@
 buildscript {
     dependencies {
         classpath(Dependencies.Google.google_service)
-        classpath("com.android.tools.build:gradle:8.0.0")
+        classpath("com.android.tools.build:gradle:7.4.2")
     }
 }
+
+
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
     id (Plugins.AGP.application) version Versions.AGP apply false

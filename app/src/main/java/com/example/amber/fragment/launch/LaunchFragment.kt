@@ -1,23 +1,31 @@
-package com.example.amber.fragment.launch
-
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.amber.R
+import com.example.amber.base.BaseFragment
 import com.example.amber.databinding.FragmentLaunchBinding
+import com.google.firebase.auth.FirebaseAuth
 
-class LaunchFragment : Fragment() {
+class LaunchFragment : BaseFragment<FragmentLaunchBinding>(FragmentLaunchBinding::inflate) {
+    private lateinit var firebaseAuth: FirebaseAuth
 
-    private lateinit var binding: FragmentLaunchBinding
+    override fun initialize() {
+        firebaseAuth = FirebaseAuth.getInstance()
+    }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentLaunchBinding.inflate(inflater, container, false)
-        return binding.root
+    override fun listeners() {
+        binding.btnLoginLaunch.setOnClickListener {
+            findNavController().navigate(R.id.loginFragment)
+        }
+        binding.btnCreateaccLaunch.setOnClickListener {
+            findNavController().navigate(R.id.registFragment)
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if (firebaseAuth.currentUser != null) {
+            findNavController().navigate(R.id.homeFragment)
+        }
+
     }
 
 }

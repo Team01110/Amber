@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/fragment_container"
     tools:context=".fragment.profile.ProfileFragment">
 
     <com.google.android.material.card.MaterialCardView
@@ -40,22 +41,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/dmsans_medium"
                 android:text="Name"
                 android:textColor="@color/black"
-                android:textSize="24dp"
-                android:fontFamily="@font/dmsans_medium"
+                android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/image_holder" />
 
             <TextView
+                android:id="@+id/email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:fontFamily="@font/dmsans_medium"
                 android:text="Users email"
                 android:textColor="@color/black"
-                android:textSize="16dp"
-                android:fontFamily="@font/dmsans_medium"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_name" />
@@ -65,7 +67,7 @@
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="336dp"
+        android:layout_height="250dp"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="224dp"
         app:cardBackgroundColor="@color/white"
@@ -78,13 +80,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_account"
-                style="@style/CustomTextViewStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Аккаунт"
-                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/tv_settings"
@@ -92,43 +87,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Настройки"
-                android:textSize="16dp" />
+                android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/tv_favourite"
+                android:id="@+id/tv_profile_basket"
                 style="@style/CustomTextViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Избранное"
-                android:textSize="16dp" />
+                android:textSize="16sp" />
+
 
             <TextView
-                style="@style/CustomTextViewStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Купоны"
-                android:textSize="16dp" />
-
-            <TextView
-                style="@style/CustomTextViewStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="История покупок"
-                android:textSize="16dp" />
-
-            <TextView
+                android:id="@+id/tv_profile_about_us"
                 style="@style/CustomTextViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="О нас"
-                android:textSize="16dp" />
+                android:textSize="16sp" />
 
             <TextView
+                android:id="@+id/tv_profile_help"
                 style="@style/CustomTextViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Помощь и поддержка"
-                android:textSize="16dp" />
+                android:textSize="16sp" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
     </com.google.android.material.card.MaterialCardView>

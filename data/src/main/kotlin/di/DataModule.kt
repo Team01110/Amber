@@ -35,7 +35,7 @@ object DataModule {
         context,
         AppDatabase::class.java,
         "Amber-db"
-    ).build()
+    ).allowMainThreadQueries().build()
 
     @Provides
     @Singleton

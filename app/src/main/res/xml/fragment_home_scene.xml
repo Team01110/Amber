@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1500">
+        <OnSwipe
+            motion:moveWhenScrollAtTop="true"
+            motion:dragDirection="dragUp"
+            motion:touchAnchorSide="top"
+            motion:onTouchUp="stop"
+            motion:touchAnchorId="@id/rv_home" />
+    </Transition>
+
+
+
+    <ConstraintSet android:id="@+id/start">
+
+
+        <Constraint
+            android:id="@+id/rv_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal"
+            motion:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            motion:layout_constraintBottom_toTopOf="@id/tv_recomendary"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/tv_recomendary"
+            android:layout_width="305dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="@string/recomendary"
+            android:textColor="@color/black"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/rv_home" />
+
+        <Constraint
+            android:id="@+id/tv_category"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_marginHorizontal="80dp"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="@string/category"
+            android:textColor="@color/black"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/toolbar"
+            motion:layout_constraintBottom_toTopOf="@id/rv_home" />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/rv_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal"
+            motion:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            motion:layout_constraintBottom_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/tv_recomendary"
+            android:layout_width="305dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="@string/recomendary"
+            android:textColor="@color/black"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/tv_category"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_marginHorizontal="80dp"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="@string/category"
+            android:textColor="@color/black"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toTopOf="parent" />
+
+    </ConstraintSet>
+</MotionScene>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@drawable/home_icon"
+        android:id="@+id/homeFragment"
+        android:title="Главная" />
+
+    <item
+        android:icon="@drawable/search_icon"
+        android:id="@+id/searchFragment"
+        android:title="Поиск" />
+    <item
+        android:icon="@drawable/bag_icon"
+        android:id="@+id/basketFragment"
+        android:title="Корзина" />
+    <item
+        android:icon="@drawable/person_icon"
+        android:id="@+id/profileFragment"
+        android:title="Профиль" />
+</menu>

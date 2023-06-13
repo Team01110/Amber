@@ -1,16 +1,15 @@
-@file:Suppress("DEPRECATION")
-
 plugins {
     id(Plugins.AGP.application)
     id(Plugins.Kotlin.android)
     id(Plugins.Kotlin.kapt)
     id (Plugins.DaggerHilt.hilt)
     id(Plugins.AGP.google_service)
+
 }
 
 android {
     namespace = "com.example.amber"
-    compileSdk = AppConfig.targetSdk
+    compileSdk = AppConfig.compileSdk
 
     defaultConfig {
         applicationId = "com.example.amber"
@@ -31,22 +30,25 @@ android {
             )
         }
     }
+
     packagingOptions {
         resources.excludes.add("META-INF/versions/9/previous-compilation-data.bin")
         resources.excludes.add("META-INF/gradle/incremental.annotation.processors")
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = "11"
     }
     buildFeatures {
         viewBinding = true
     }
 }
+
 dependencies {
+
     implementation(Dependencies.UI.core)
     implementation(Dependencies.UI.appcompat)
     implementation(Dependencies.UI.material)
@@ -59,6 +61,7 @@ dependencies {
     testImplementation(Dependencies.UI.junit)
     androidTestImplementation(Dependencies.UI.test_junit)
     androidTestImplementation(Dependencies.UI.espresso)
+    implementation(project(":domain"))
     api(project(":domain"))
     api(project(":data"))
 
@@ -67,10 +70,16 @@ dependencies {
 
     //Hilt
     implementation(Dependencies.DaggerHilt.hilt)
-    kapt (Dependencies.DaggerHilt.hilt_compiler)
+    kapt(Dependencies.DaggerHilt.hilt_compiler)
+
+    //Room
+    implementation(Dependencies.Room.room_runtime)
+    implementation(Dependencies.Room.room_ktx)
+    kapt(Dependencies.Room.room_compiler)
 
     //Coroutine
     implementation(Dependencies.Coroutine.coroutines)
+    implementation(Dependencies.Coroutine.coroutinescore)
 
     //ViewPager2
     implementation(Dependencies.viewpager2.viewpager2)
@@ -82,6 +91,9 @@ dependencies {
     //Firebase
      implementation (Dependencies.Firebase.firebase_auth)
      implementation (Dependencies.Firebase.firebase_bom)
+//    implementation (Dependencies.Firebase.firebase_firestore)
+//    implementation (Dependencies.Firebase.firebase_storage)
+
 
     //Glide
     implementation(Dependencies.Glide.glide)

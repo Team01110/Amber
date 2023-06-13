@@ -7,66 +7,79 @@
     android:background="@color/light_gray"
     tools:context=".fragment.product.ProductFragment">
 
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></Toolbar>
 
-    <ImageView
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="68dp"
-        android:src="@drawable/arrow_left"
+        android:layout_marginHorizontal="36dp"
+        android:layout_marginTop="40dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/dmsans_medium"
+        android:maxLines="2"
+        android:text="Title"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/iv_product"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:textSize="24dp"
-        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:text="Title"
-        android:textColor="@color/black"
-        android:fontFamily="@font/dmsans_medium"
-        app:layout_constraintBottom_toTopOf="@id/iv_product"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:textSize="12dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:text="От"
-        android:fontFamily="@font/dmsans_regular"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/tv_title"
         android:layout_marginTop="56dp"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:fontFamily="@font/dmsans_regular"
+        android:text="От"
+        android:textColor="@color/black"
+        android:textSize="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
     <TextView
-        android:textSize="16dp"
         android:id="@+id/tv_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:text="Цена"
-        android:fontFamily="@font/dmsans_medium"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/tv_title"
         android:layout_marginTop="80dp"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/iv_product"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_marginTop="125dp"
-        android:src="@color/orange_amber"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:fontFamily="@font/dmsans_medium"
+        android:text="Цена"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
 
     <com.google.android.material.card.MaterialCardView
         style="@style/CustomCardViewStyleTop"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="100dp"
+        app:cardCornerRadius="36dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toTopOf="@id/card_view_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_product"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@color/orange_amber" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view_bottom"
+        style="@style/CustomCardViewStyleTop"
         android:layout_width="match_parent"
-        android:layout_height="320dp"
+        android:layout_height="425dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -78,62 +91,38 @@
                 android:id="@+id/tv_rate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/dmsans_medium"
                 android:text="Оценка"
                 android:textColor="@color/black"
-                android:fontFamily="@font/dmsans_medium"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                app:layout_constraintBottom_toBottomOf="@id/tv_rate"
-                app:layout_constraintStart_toEndOf="@id/tv_rate"
-                app:layout_constraintTop_toTopOf="@id/tv_rate">
-
-
-                <ImageView
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:src="@drawable/ic_circle_24" />
-
-                <ImageView
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_marginStart="4dp"
-                    android:src="@drawable/ic_circle_24" />
-
-                <ImageView
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_marginStart="6dp"
-                    android:src="@drawable/ic_circle_24" />
-
-                <ImageView
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_marginStart="6dp"
-                    android:src="@drawable/ic_circle_24" />
-
-                <ImageView
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_marginStart="6dp"
-                    android:src="@drawable/ic_circle_24" />
-            </LinearLayout>
+                android:layout_marginStart="11dp"
+                android:numStars="5"
+                android:progressBackgroundTint="@color/gray"
+                android:progressTint="@color/yellow"
+                android:stepSize="0.5"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_rate"
+                app:layout_constraintStart_toEndOf="@+id/tv_rate"
+                app:layout_constraintTop_toTopOf="@+id/tv_rate" />
 
 
             <TextView
                 android:id="@+id/tv_kindOfObject"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="44dp"
-                android:text="Вид вещи"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/dmsans_regular"
+                android:text="Вид вещи"
                 android:textColor="@color/black"
                 android:textSize="18dp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_rate" />
 
@@ -142,29 +131,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="описание"
+                android:ellipsize="end"
                 android:fontFamily="@font/dmsans_regular"
+                android:maxLines="6"
+                android:text="описание"
                 android:textColor="@color/black"
-                android:textSize="14dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_kindOfObject" />
 
-            <androidx.cardview.widget.CardView
+            <Button
+                android:id="@+id/btn_product_add"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                app:cardCornerRadius="6dp"
-                app:layout_constraintBottom_toBottomOf="parent">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/orange_amber"
-                    android:gravity="center"
-                    android:fontFamily="@font/dmsans_medium"
-                    android:text="добавить в корзину"
-                    android:textColor="@color/white"
-                    android:textSize="20sp" />
-            </androidx.cardview.widget.CardView>
+                android:layout_height="50sp"
+                android:layout_marginBottom="50dp"
+                android:backgroundTint="@color/orange_amber"
+                android:fontFamily="@font/dmsans_medium"
+                android:text="добавить в корзину"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
