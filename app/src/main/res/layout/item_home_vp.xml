@@ -2,17 +2,19 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:padding="32dp"
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="275dp"
-        android:layout_height="match_parent"
+        android:layout_height="300dp"
         android:layout_margin="20dp"
         android:background="@drawable/vp_back">
 
+
         <androidx.cardview.widget.CardView
             app:cardCornerRadius="34dp"
-            android:id="@+id/card_view_vp"
+            android:id="@+id/card_view_img_vp_item"
             android:layout_width="175dp"
             android:layout_height="175dp"
             android:layout_marginTop="50dp"
@@ -25,13 +27,12 @@
             <ImageView
                 android:id="@+id/img_item_vp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/purple_500" />
+                android:layout_height="match_parent" />
         </androidx.cardview.widget.CardView>
 
 
         <TextView
-            android:id="@+id/item_tv_title_vp"
+            android:id="@+id/tv_title_vp_item"
             android:layout_width="match_parent"
             android:layout_height="28dp"
             android:layout_marginHorizontal="36dp"
@@ -42,21 +43,21 @@
             android:text="@string/title"
             android:textColor="@color/black"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/card_view_vp"
-            app:layout_constraintStart_toStartOf="@+id/card_view_vp"
-            app:layout_constraintTop_toBottomOf="@+id/card_view_vp" />
+            app:layout_constraintEnd_toEndOf="@+id/card_view_img_vp_item"
+            app:layout_constraintStart_toStartOf="@+id/card_view_img_vp_item"
+            app:layout_constraintTop_toBottomOf="@+id/card_view_img_vp_item" />
 
         <TextView
-            android:id="@+id/item_tv_count_vp"
+            android:id="@+id/tv_count_vp_item"
             android:layout_width="170dp"
             android:layout_height="24dp"
             android:layout_marginTop="4dp"
             android:gravity="center"
             android:text="@string/_100_product"
             android:textStyle="normal"
-            app:layout_constraintEnd_toEndOf="@+id/item_tv_title_vp"
-            app:layout_constraintStart_toStartOf="@+id/item_tv_title_vp"
-            app:layout_constraintTop_toBottomOf="@+id/item_tv_title_vp" />
+            app:layout_constraintEnd_toEndOf="@+id/tv_title_vp_item"
+            app:layout_constraintStart_toStartOf="@+id/tv_title_vp_item"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_vp_item" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

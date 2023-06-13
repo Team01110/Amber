@@ -21,7 +21,7 @@
             android:paddingTop="54dp">
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/image_holder"
+                android:id="@+id/card_view_profile_img"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 app:cardCornerRadius="24dp"
@@ -30,14 +30,14 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/iv_profile"
+                    android:id="@+id/img_profile"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@color/black" />
             </com.google.android.material.card.MaterialCardView>
 
             <TextView
-                android:id="@+id/tv_name"
+                android:id="@+id/tv_name_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -47,10 +47,10 @@
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/image_holder" />
+                app:layout_constraintTop_toBottomOf="@id/card_view_profile_img" />
 
             <TextView
-                android:id="@+id/email"
+                android:id="@+id/tv_email_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -60,7 +60,7 @@
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_name" />
+                app:layout_constraintTop_toBottomOf="@id/tv_name_profile" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
@@ -82,7 +82,7 @@
 
 
             <TextView
-                android:id="@+id/tv_settings"
+                android:id="@+id/tv_settings_profile"
                 style="@style/CustomTextViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -90,7 +90,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/tv_profile_basket"
+                android:id="@+id/tv_favourites_profile"
                 style="@style/CustomTextViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
 
 
             <TextView
-                android:id="@+id/tv_profile_about_us"
+                android:id="@+id/tv_about_us_profile"
                 style="@style/CustomTextViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -107,7 +107,7 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/tv_profile_help"
+                android:id="@+id/tv_help_support_profile"
                 style="@style/CustomTextViewStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

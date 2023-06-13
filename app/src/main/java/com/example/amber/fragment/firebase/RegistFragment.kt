@@ -16,45 +16,34 @@ class RegistFragment : BaseFragment<FragmentRegistBinding>(FragmentRegistBinding
     }
 
     override fun listeners() {
-        binding.tvIfAccount.setOnClickListener {
+        binding.tvRegisterSignIn.setOnClickListener {
             findNavController().navigate(R.id.action_registFragment_to_loginFragment)
         }
 
-        binding.button.setOnClickListener {
-            val email = binding.emailEt.text.toString()
-            val password = binding.passET.text.toString()
+        binding.btnSignUpRegister.setOnClickListener {
+            val email = binding.edEmilRegister.text.toString()
+            val password = binding.edPasswordRegister.text.toString()
+            val name = binding.edNicknameRegister.text.toString()
 
 
+            if (email.isNotEmpty() && password.isNotEmpty() && name.isNotEmpty() && binding.checkBoxConfidential.isChecked) {
+                firebaseAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener {
+                        if (it.isSuccessful) {
 
+                            val profileUpdates = UserProfileChangeRequest.Builder()
+                                .setDisplayName(name)
+                                .build()
 
-            if (email.isNotEmpty() && password.isNotEmpty()) {
-                firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
-                    if (it.isSuccessful) {
+                            firebaseAuth.currentUser?.updateProfile(profileUpdates)
 
-                        val name = binding.nickName.text.toString()
-                        val profileUpdates = UserProfileChangeRequest.Builder()
-                            .setDisplayName(name)
-                            .build()
-
-                        firebaseAuth.currentUser?.updateProfile(profileUpdates)
-                            ?.addOnCompleteListener { _ ->
-                            }
-
-                        firebaseAuth.currentUser?.sendEmailVerification()
-                            ?.addOnSuccessListener {
-                                showToast("Ссылка отправлена на ваш email!")
-                                findNavController().navigate(R.id.action_registFragment_to_loginFragment)
-                            }?.addOnFailureListener {
-                                showToast(it.toString())
-                            }
-
-
-                    } else {
-                        showToast(it.exception.toString())
+                            findNavController().navigate(R.id.action_registFragment_to_loginFragment)
+                        } else {
+                            showToast(it.exception.toString())
+                        }
                     }
-                }
             } else {
-                showToast("please write something")
+                showToast("Вы не докончили заполнение")
             }
         }
     }

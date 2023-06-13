@@ -7,7 +7,7 @@
     tools:context=".fragment.firebase.LoginFragment">
 
     <TextView
-        android:id="@+id/tv_sign"
+        android:id="@+id/tv_sign_in_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/emailTextLayout"
+        android:id="@+id/ed_email_layout_login"
         style="@style/LoginTextInputOuterFieldStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,21 +30,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_sign">
+        app:layout_constraintTop_toBottomOf="@id/tv_sign_in_login">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/email_et"
+            android:id="@+id/ed_email_login"
             style="@style/LoginTextInputInnerFieldStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/save_email"
             android:inputType="textEmailAddress"
-            android:maxLength="26" />
+            android:maxLength="35" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/PasswordLayout"
+        android:id="@+id/ed_password_layout_login"
         style="@style/LoginTextInputOuterFieldStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,11 +54,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/emailTextLayout"
+        app:layout_constraintTop_toBottomOf="@id/ed_email_layout_login"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password_et"
+            android:id="@+id/ed_password_login"
             style="@style/LoginTextInputInnerFieldStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -69,7 +69,7 @@
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/sign_button"
+        android:id="@+id/btn_sign_in_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
@@ -81,10 +81,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PasswordLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/ed_password_layout_login" />
 
     <TextView
-        android:id="@+id/tv_if_account"
+        android:id="@+id/tv_create_acc_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -93,30 +93,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_button" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_sign_in_login" />
 
-<!--     <ImageButton-->
-<!--         android:id="@+id/googlebt"-->
-<!--         android:src="@mipmap/google"-->
-<!--         android:layout_width="50dp"-->
-<!--         android:layout_height="50dp"-->
-<!--         android:layout_marginEnd="70dp"-->
-<!--         android:layout_marginTop="70dp"-->
-<!--         app:layout_constraintEnd_toEndOf="parent"-->
-<!--         app:layout_constraintHorizontal_bias="0.5"-->
-<!--         app:layout_constraintStart_toStartOf="parent"-->
-<!--         app:layout_constraintTop_toBottomOf="@+id/PasswordLayout"/>-->
+    <!--     <ImageButton-->
+    <!--         android:id="@+id/googlebt"-->
+    <!--         android:src="@mipmap/google"-->
+    <!--         android:layout_width="50dp"-->
+    <!--         android:layout_height="50dp"-->
+    <!--         android:layout_marginEnd="70dp"-->
+    <!--         android:layout_marginTop="70dp"-->
+    <!--         app:layout_constraintEnd_toEndOf="parent"-->
+    <!--         app:layout_constraintHorizontal_bias="0.5"-->
+    <!--         app:layout_constraintStart_toStartOf="parent"-->
+    <!--         app:layout_constraintTop_toBottomOf="@+id/PasswordLayout"/>-->
 
-<!--    <ImageButton-->
-<!--        android:id="@+id/vkib"-->
-<!--        android:src="@mipmap/vk"-->
-<!--        android:layout_width="50dp"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:layout_marginStart="50dp"-->
-<!--        android:layout_marginTop="70dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.5"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/PasswordLayout"/>-->
+    <!--    <ImageButton-->
+    <!--        android:id="@+id/vkib"-->
+    <!--        android:src="@mipmap/vk"-->
+    <!--        android:layout_width="50dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_marginStart="50dp"-->
+    <!--        android:layout_marginTop="70dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.5"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/PasswordLayout"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

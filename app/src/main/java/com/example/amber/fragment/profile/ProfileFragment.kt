@@ -4,8 +4,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.amber.R
 import com.example.amber.base.BaseFragment
 import com.example.amber.databinding.FragmentProfileBinding
-import com.example.amber.exseption.showToast
-import com.example.amber.fragment.home.HomeFragment
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -16,20 +14,20 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(FragmentProfileBind
         if (user == null) {
             findNavController().navigate(R.id.loginFragment)
         } else {
-            binding.tvName.text = user.displayName
-            binding.email.text = user.email
+            binding.tvNameProfile.text = user.displayName
+            binding.tvEmailProfile.text = user.email
         }
 
     }
 
     override fun listeners() {
-        binding.tvProfileAboutUs.setOnClickListener{
+        binding.tvAboutUsProfile.setOnClickListener {
             controller.navigate(R.id.aboutUsFragment)
         }
-        binding.tvProfileBasket.setOnClickListener{
+        binding.tvFavouritesProfile.setOnClickListener {
             controller.navigate(R.id.basketFragment)
         }
-        binding.tvProfileHelp.setOnClickListener{
+        binding.tvHelpSupportProfile.setOnClickListener {
             controller.navigate(R.id.supportFragment)
         }
     }

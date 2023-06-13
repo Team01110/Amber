@@ -1,11 +1,5 @@
 package com.example.amber.fragment.firebase
 
-import android.annotation.SuppressLint
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.amber.R
 import com.example.amber.base.BaseFragment
@@ -17,51 +11,17 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 
 
-class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate){
+class LoginFragment :
+    BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate) {
+
+
     private lateinit var firebaseAuth: FirebaseAuth
 
     private lateinit var googleSignInClient: GoogleSignInClient
 
-//    private val launcher =
-//        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-//            if (result.resultCode == Activity.RESULT_OK) {
-//                val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
-//                handleResults(task)
-//            }
-//        }
-
-    override fun listeners() {
-        binding.tvIfAccount.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_registFragment)
-        }
-
-        binding.signButton.setOnClickListener {
-            val email = binding.emailEt.text.toString()
-            val password = binding.passwordEt.text.toString()
-
-            if (email.isNotEmpty() && password.isNotEmpty()) {
-
-                firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        val verification = firebaseAuth.currentUser?.isEmailVerified
-                        if (verification == true) {
-
-                            findNavController().navigate(R.id.launchFragment)
-                        }else{
-                            showToast("Ссылка была отправлена на ваш email!")
-                        }
-                    } else {
-                        showToast(it.exception.toString())
-                    }
-                }
-
-            } else {
-                showToast("please write something")
-            }
-        }
-    }
 
     override fun initialize() {
+
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.app_name)).requestEmail().build()
 
@@ -70,45 +30,36 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
         firebaseAuth = FirebaseAuth.getInstance()
     }
 
-    //    override fun setupRequest() {
-//        vm.amberState.collectState(onLoading = {
-//            binding.progressBar.isVisible = true
-//        }, onError = {
-//            showToast("failed")
-//            binding.progressBar.isVisible = false
-//        }, onSuccess = {
-//            binding.progressBar.isVisible = false
-//        })
-//    }
+    override fun listeners() {
 
-//    private fun signInGoogle() {
-//        val signInIntent = googleSignInClient.signInIntent
-//        launcher.launch(signInIntent)
-//    }
+        binding.tvCreateAccLogin.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_registFragment)
+        }
 
-//    private fun handleResults(task: Task<GoogleSignInAccount>) {
-//        if (task.isSuccessful) {
-//            val account: GoogleSignInAccount? = task.result
-//            if (account != null) {
-//                updateUI(account)
-//            }
-//        } else {
-//            showToast(task.exception.toString())
-//        }
-//    }
-//
-//    private fun updateUI(account: GoogleSignInAccount) {
-//        val credential = GoogleAuthProvider.getCredential(account.idToken, null)
-//        firebaseAuth.signInWithCredential(credential).addOnCompleteListener {
-//            if (it.isSuccessful) {
-//                showToast("work")
-//                findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
-//            } else {
-//                showToast(it.exception.toString())
-//
-//            }
-//        }
-//    }
+        binding.btnSignInLogin.setOnClickListener {
+            val email = binding.edEmailLogin.text.toString()
+            val pass = binding.edPasswordLogin.text.toString()
+
+            if (email.isNotEmpty() && pass.isNotEmpty()) {
+
+                firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                    } else {
+                        showToast(it.exception.toString())
+
+                    }
+                }
+            } else {
+                showToast("Вы не докончили заполнение")
+
+            }
+        }
+
+        binding.tvCreateAccLogin.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_registFragment)
+        }
+    }
 
 
     override fun onStart() {

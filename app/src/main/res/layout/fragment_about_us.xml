@@ -6,17 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".fragment.profile.AboutUsFragment">
 
-    <androidx.appcompat.widget.Toolbar
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/tool"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
-
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_view"
+        android:id="@+id/card_view_about_us"
         android:layout_width="match_parent"
         android:layout_height="164dp"
         android:backgroundTint="#FFDCBC"
@@ -36,7 +27,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/card_name_app"
+            android:id="@+id/tv_app_name_about_us"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
@@ -60,7 +51,7 @@
         android:textColor="#0B1124"
         android:textSize="18sp"
         android:textStyle="normal"
-        app:layout_constraintTop_toBottomOf="@id/card_view" />
+        app:layout_constraintTop_toBottomOf="@id/card_view_about_us" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

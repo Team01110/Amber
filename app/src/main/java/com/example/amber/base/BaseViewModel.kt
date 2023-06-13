@@ -1,5 +1,6 @@
 package com.example.amber.base
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.amber.fragment.utils.UiState
@@ -9,6 +10,9 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
 abstract class BaseViewModel : ViewModel() {
+
+    val loading: MutableLiveData<Boolean> = MutableLiveData()
+
     protected fun <T> Flow<ResultStatus<T>?>.collectFlow(state: MutableStateFlow<UiState<T>>) {
         viewModelScope.launch {
             this@collectFlow.collect {

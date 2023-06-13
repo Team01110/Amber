@@ -9,7 +9,8 @@ import com.bumptech.glide.Glide
 import com.example.amber.databinding.ItemHomeVpBinding
 import com.example.domain.model.Category
 
-class HomeAdapterVp : ListAdapter<Category, HomeAdapterVp.HomeViewHolder>(NotesCallback()) {
+class HomeAdapterVp(val click: (category: Category) -> Unit) :
+    ListAdapter<Category, HomeAdapterVp.HomeViewHolder>(NotesCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
         val binding = ItemHomeVpBinding.inflate(
@@ -22,13 +23,16 @@ class HomeAdapterVp : ListAdapter<Category, HomeAdapterVp.HomeViewHolder>(NotesC
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
         val model = getItem(position)
         holder.bind(model)
+        holder.itemView.setOnClickListener {
+            click(getItem(position))
+        }
     }
 
     inner class HomeViewHolder(private val binding: ItemHomeVpBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(model: Category) {
-            binding.itemTvTitleVp.text = model.titleCategory
-            binding.itemTvCountVp.text = "Товаров 4"
+            binding.tvTitleVpItem.text = model.titleCategory
+            binding.tvCountVpItem.text = "Товаров 4"
             Glide.with(binding.imgItemVp)
                 .load(model.imageCategory)
                 .into(binding.imgItemVp)

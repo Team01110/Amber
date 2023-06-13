@@ -1,40 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn = "navigation_view">
+    tools:showIn="navigation_view">
 
-    <group
-        android:checkableBehavior="single">
+    <group android:checkableBehavior="single">
 
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home"
-            android:title="@string/home"/>
+            android:title="@string/home" />
 
         <item
             android:id="@+id/nav_search"
             android:icon="@drawable/ic_search"
-            android:title="@string/search"/>
+            android:title="@string/search" />
 
         <item
             android:id="@+id/nav_basket"
             android:icon="@drawable/ic_basket"
-            android:title="@string/basket_"/>
+            android:title="@string/basket_" />
 
         <item
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_person"
-            android:title="@string/profile"/>
+            android:title="@string/profile" />
 
         <item
             android:id="@+id/nav_about"
             android:icon="@drawable/home_alt"
-            android:title="@string/about_us"/>
+            android:title="@string/about_us" />
 
         <item
             android:id="@+id/nav_help"
             android:icon="@drawable/baseline_help_24"
-            android:title="@string/help"/>
+            android:title="@string/help" />
 
     </group>
 

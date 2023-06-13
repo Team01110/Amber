@@ -22,7 +22,7 @@ object DataModule {
 
     @Provides
     @Singleton
-    fun AmberApi(): ApiService {
+    fun getApi(): ApiService {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create()).build()

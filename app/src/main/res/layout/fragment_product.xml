@@ -7,20 +7,29 @@
     android:background="@color/light_gray"
     tools:context=".fragment.product.ProductFragment">
 
+
     <Toolbar
-        android:id="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></Toolbar>
+        android:layout_height="60dp">
+
+        <ImageButton
+            android:id="@+id/img_arrow_back"
+            android:src="@drawable/baseline_arrow_back_24"
+            android:backgroundTint="@color/white"
+            android:layout_gravity="start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </Toolbar>
+
 
     <TextView
-        android:id="@+id/tv_title"
+        android:id="@+id/tv_title_product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="36dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:ellipsize="end"
         android:fontFamily="@font/dmsans_medium"
         android:maxLines="2"
@@ -28,7 +37,6 @@
         android:textColor="@color/black"
         android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/iv_product"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -42,10 +50,10 @@
         android:textColor="@color/black"
         android:textSize="12dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+        app:layout_constraintTop_toBottomOf="@id/tv_title_product" />
 
     <TextView
-        android:id="@+id/tv_price"
+        android:id="@+id/tv_price_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
@@ -55,28 +63,28 @@
         android:textColor="@color/black"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+        app:layout_constraintTop_toBottomOf="@id/tv_title_product" />
 
     <com.google.android.material.card.MaterialCardView
         style="@style/CustomCardViewStyleTop"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="120dp"
         app:cardCornerRadius="36dp"
         android:layout_marginEnd="20dp"
-        app:layout_constraintBottom_toTopOf="@id/card_view_bottom"
+        app:layout_constraintBottom_toTopOf="@id/card_view_product"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/iv_product"
+            android:id="@+id/img_product"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@color/orange_amber" />
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card_view_bottom"
+        android:id="@+id/card_view_product"
         style="@style/CustomCardViewStyleTop"
         android:layout_width="match_parent"
         android:layout_height="425dp"
@@ -88,7 +96,7 @@
             android:padding="35dp">
 
             <TextView
-                android:id="@+id/tv_rate"
+                android:id="@+id/tv_rate_product"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/dmsans_medium"
@@ -99,7 +107,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <RatingBar
-                android:id="@+id/ratingBar"
+                android:id="@+id/rating_bar_product"
                 style="@style/Widget.AppCompat.RatingBar.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -108,13 +116,13 @@
                 android:progressBackgroundTint="@color/gray"
                 android:progressTint="@color/yellow"
                 android:stepSize="0.5"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_rate"
-                app:layout_constraintStart_toEndOf="@+id/tv_rate"
-                app:layout_constraintTop_toTopOf="@+id/tv_rate" />
+                app:layout_constraintBottom_toBottomOf="@+id/tv_rate_product"
+                app:layout_constraintStart_toEndOf="@+id/tv_rate_product"
+                app:layout_constraintTop_toTopOf="@+id/tv_rate_product" />
 
 
             <TextView
-                android:id="@+id/tv_kindOfObject"
+                android:id="@+id/tv_bottom_title_product"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -124,10 +132,10 @@
                 android:textSize="18dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_rate" />
+                app:layout_constraintTop_toBottomOf="@id/tv_rate_product" />
 
             <TextView
-                android:id="@+id/tv_desc"
+                android:id="@+id/tv_desc_product"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -137,7 +145,7 @@
                 android:text="описание"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_kindOfObject" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_bottom_title_product" />
 
             <Button
                 android:id="@+id/btn_product_add"

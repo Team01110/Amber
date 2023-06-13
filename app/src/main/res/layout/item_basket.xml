@@ -13,20 +13,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-        <ImageView
-            android:id="@+id/img_basket"
-            android:layout_width="88dp"
-            android:layout_height="124dp"
-            android:layout_margin="12dp"
-            android:src="@color/purple_200"
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="24dp"
+            android:id="@+id/card_view_img_basket_item"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="88dp"
+            android:layout_height="86dp"
+            android:layout_margin="12dp">
+
+            <ImageView
+                android:id="@+id/img_basket_item"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@color/purple_200" />
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:textStyle="bold"
-            android:id="@+id/tv_basket_title"
+            android:id="@+id/tv_basket_title_item"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:maxLines="1"
@@ -35,24 +41,24 @@
             android:text="@string/basket_title"
             android:textColor="@color/black"
             android:textSize="18sp"
-            app:layout_constraintStart_toEndOf="@+id/img_basket"
+            app:layout_constraintStart_toEndOf="@+id/card_view_img_basket_item"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/img_basket" />
+            app:layout_constraintTop_toTopOf="@+id/card_view_img_basket_item" />
 
         <TextView
-            android:id="@+id/tv_basket_review"
+            android:id="@+id/tv_basket_review_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Оценка"
             android:textColor="@color/black"
             android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@id/tv_basket_title"
-            app:layout_constraintStart_toStartOf="@id/tv_basket_title"
-            app:layout_constraintTop_toBottomOf="@id/tv_basket_title" />
+            app:layout_constraintStart_toEndOf="@id/tv_basket_title_item"
+            app:layout_constraintStart_toStartOf="@id/tv_basket_title_item"
+            app:layout_constraintTop_toBottomOf="@id/tv_basket_title_item" />
 
         <RatingBar
-            android:id="@+id/ratingBar"
+            android:id="@+id/rating_bar_basket_item"
             style="@style/Widget.AppCompat.RatingBar.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -61,12 +67,12 @@
             android:progressBackgroundTint="@color/gray"
             android:progressTint="@color/yellow"
             android:stepSize="0.5"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_basket_review"
-            app:layout_constraintStart_toEndOf="@+id/tv_basket_review"
-            app:layout_constraintTop_toTopOf="@+id/tv_basket_review" />
+            app:layout_constraintBottom_toBottomOf="@+id/tv_basket_review_item"
+            app:layout_constraintStart_toEndOf="@+id/tv_basket_review_item"
+            app:layout_constraintTop_toTopOf="@+id/tv_basket_review_item" />
 
         <TextView
-            android:id="@+id/tv_basket_price"
+            android:id="@+id/tv_basket_price_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -74,15 +80,16 @@
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/tv_basket_review"
-            app:layout_constraintStart_toStartOf="@id/tv_basket_review"
-            app:layout_constraintTop_toBottomOf="@id/tv_basket_review" />
+            app:layout_constraintStart_toEndOf="@id/tv_basket_review_item"
+            app:layout_constraintStart_toStartOf="@id/tv_basket_review_item"
+            app:layout_constraintTop_toBottomOf="@id/tv_basket_review_item" />
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_view"
+            android:id="@+id/card_view_count_item"
             android:layout_width="32dp"
             android:layout_height="24dp"
-            android:layout_margin="16dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginStart="40dp"
             android:backgroundTint="@color/white"
             app:cardCornerRadius="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -90,7 +97,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <TextView
-                android:id="@+id/tv_basket_count"
+                android:id="@+id/tv_basket_count_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -101,24 +108,25 @@
         </androidx.cardview.widget.CardView>
 
         <ImageView
-            android:id="@+id/btn_minus"
+            android:id="@+id/btn_minus_item_basket"
             android:layout_width="12dp"
             android:layout_height="22dp"
-            android:layout_margin="20dp"
+            android:layout_marginStart="5dp"
             android:src="@drawable/btn_minus"
-            app:layout_constraintBottom_toBottomOf="@id/card_view"
-            app:layout_constraintEnd_toStartOf="@+id/card_view"
-            app:layout_constraintTop_toTopOf="@id/card_view" />
+            app:layout_constraintStart_toEndOf="@id/tv_basket_price_item"
+            app:layout_constraintBottom_toBottomOf="@id/card_view_count_item"
+            app:layout_constraintEnd_toStartOf="@+id/card_view_count_item"
+            app:layout_constraintTop_toTopOf="@id/card_view_count_item" />
 
         <ImageView
-            android:id="@+id/btn_plus"
+            android:id="@+id/btn_plus_item_basket"
             android:layout_width="12dp"
             android:layout_height="12dp"
             android:layout_margin="10dp"
             android:src="@drawable/btn_plus"
-            app:layout_constraintBottom_toBottomOf="@id/card_view"
-            app:layout_constraintStart_toEndOf="@id/card_view"
-            app:layout_constraintTop_toTopOf="@id/card_view" />
+            app:layout_constraintBottom_toBottomOf="@id/card_view_count_item"
+            app:layout_constraintStart_toEndOf="@id/card_view_count_item"
+            app:layout_constraintTop_toTopOf="@id/card_view_count_item" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

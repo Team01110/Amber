@@ -1,115 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layoutDescription="@xml/fragment_category_scene"
     tools:context=".fragment.category.CategoryFragment">
 
 
-    <LinearLayout
-        android:id="@+id/toolbar"
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/toolbar"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginHorizontal="16dp"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
+
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/btn_arrow"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:layout_marginStart="36dp"-->
+    <!--            android:src="@drawable/arrow_left_img" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tv_basket"-->
+    <!--            android:layout_width="0dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="700"-->
+    <!--            android:fontFamily="@font/dmsans_regular"-->
+    <!--            android:gravity="center"-->
+    <!--            android:text="@string/basket"-->
+    <!--            android:textColor="@color/black"-->
+    <!--            android:textSize="16sp"-->
+    <!--            android:textStyle="" />-->
+    <!--    </LinearLayout>-->
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_category_img"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginTop="80dp"
+        app:cardCornerRadius="42dp"
+        app:cardElevation="22dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_category_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_img"
+            android:elevation="11dp"
+            android:src="@drawable/img"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_category"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal"
+        android:layout_height="300dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="125dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <ImageView
-            android:id="@+id/btn_arrow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="36dp"
-            android:src="@drawable/arrow_left_img" />
-
-        <TextView
-            android:id="@+id/tv_basket"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="700"
-            android:fontFamily="@font/dmsans_regular"
-            android:gravity="center"
-            android:text="@string/basket"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="" />
-    </LinearLayout>
-
-
-    <androidx.cardview.widget.CardView
-        app:cardCornerRadius="42dp"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginHorizontal="80dp"
-        android:layout_marginTop="100dp"
-        app:cardElevation="22dp"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageView
-            android:id="@+id/img_item_vp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/img"
-            android:background="@drawable/background_img"
-            android:elevation="11dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolbar" />
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_margin="20dp"
-        app:layout_constraintBottom_toTopOf="@id/tovar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/vp_back">
+            android:background="@drawable/background_category">
 
             <TextView
-                android:id="@+id/item_tv_title_vp"
-                android:layout_width="wrap_content"
+                android:id="@+id/tv_title_category_card"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="34dp"
                 android:layout_marginTop="100dp"
+                android:ellipsize="end"
                 android:gravity="center"
-                android:text="Titlte"
+                android:maxLines="2"
+                android:text="Title"
                 android:textColor="@color/black"
-                android:textSize="24sp"
+                android:textSize="22sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/description"
-                android:layout_width="170dp"
-                android:layout_height="24dp"
-                android:layout_marginTop="4dp"
-                android:gravity="center"
-                android:text="Description"
-                android:textStyle="normal"
-                app:layout_constraintEnd_toEndOf="@+id/item_tv_title_vp"
-                app:layout_constraintStart_toStartOf="@+id/item_tv_title_vp"
-                app:layout_constraintTop_toBottomOf="@+id/item_tv_title_vp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/tovar"
+        android:id="@+id/tv_category_products"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
@@ -118,20 +112,18 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/recycler"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_view_category" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler"
+        android:id="@+id/rv_category"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="34dp"
-        android:layout_marginBottom="40dp"
-        android:orientation="horizontal"
+        android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:listitem="@layout/item_catogory_goods" />
+        app:layout_constraintTop_toBottomOf="@id/tv_category_products"
+        tools:listitem="@layout/item_category_products" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>

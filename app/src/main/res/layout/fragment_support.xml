@@ -8,7 +8,7 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_view"
+        android:id="@+id/card_view_support"
         android:layout_width="match_parent"
         android:layout_height="164dp"
         android:backgroundTint="#FFDCBC"
@@ -52,7 +52,7 @@
         android:textColor="#0B1124"
         android:textSize="22sp"
         android:textStyle="normal"
-        app:layout_constraintTop_toBottomOf="@id/card_view" />
+        app:layout_constraintTop_toBottomOf="@id/card_view_support" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

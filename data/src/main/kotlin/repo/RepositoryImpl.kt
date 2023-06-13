@@ -2,8 +2,6 @@ package repo
 
 import base.BaseRepo
 import com.example.domain.model.Category
-import com.example.domain.model.ItemModel
-import com.example.domain.model.Jewelery
 import com.example.domain.model.Product
 import com.example.domain.repo.Repository
 import com.example.domain.utils.ResultStatus
@@ -17,8 +15,10 @@ import java.io.IOException
 import javax.inject.Inject
 
 class RepositoryImpl @Inject constructor
-    (private val dao: AmberDao,
-    private val api: ApiService) : Repository, BaseRepo() {
+    (
+    private val dao: AmberDao,
+    private val api: ApiService
+) : Repository, BaseRepo() {
     override suspend fun getProducts(): Flow<ResultStatus<List<Product>>> = flow {
         try {
             emit(ResultStatus.Loading())

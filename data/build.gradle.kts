@@ -17,7 +17,7 @@ android {
         minSdk = AppConfig.minSdk
         targetSdk = AppConfig.targetSdk
 
-        buildConfigField ("String", "BASE_URL", "\"https://amberjewelery.pythonanywhere.com/\"")
+        buildConfigField("String", "BASE_URL", "\"https://amberjewelery.pythonanywhere.com/\"")
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         val consumerProguardFiles = "consumer-rules.pro"
     }

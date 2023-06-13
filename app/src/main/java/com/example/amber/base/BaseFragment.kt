@@ -42,8 +42,9 @@ abstract class BaseFragment<VB : ViewBinding>(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         initialize()
-        listeners()
         setupRequest()
+        listeners()
+
     }
 
     protected open fun initialize() {}
@@ -76,4 +77,5 @@ abstract class BaseFragment<VB : ViewBinding>(
             }
         }
     }
+
 }

@@ -9,7 +9,8 @@ import com.bumptech.glide.Glide
 import com.example.amber.databinding.ItemHomeRvBinding
 import com.example.domain.model.Product
 
-class HomeAdapterRv(val click:(product: Product) -> Unit) : ListAdapter<Product, HomeAdapterRv.HomeViewHolder>(NotesCallback()) {
+class HomeAdapterRv(val click: (product: Product) -> Unit) :
+    ListAdapter<Product, HomeAdapterRv.HomeViewHolder>(NotesCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
         val binding = ItemHomeRvBinding.inflate(
@@ -22,7 +23,7 @@ class HomeAdapterRv(val click:(product: Product) -> Unit) : ListAdapter<Product,
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
         val model = getItem(position)
         holder.bind(model)
-        holder.itemView.setOnClickListener{
+        holder.itemView.setOnClickListener {
             click(model)
         }
     }
@@ -30,11 +31,11 @@ class HomeAdapterRv(val click:(product: Product) -> Unit) : ListAdapter<Product,
     inner class HomeViewHolder(private val binding: ItemHomeRvBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(model: Product) {
-            binding.itemTvItemTitleRv.text = model.titleProduct
-            binding.itemTvPriceRv.text = model.price
-            Glide.with(binding.itemImgRv)
+            binding.tvItemTitleRv.text = model.titleProduct
+            binding.tvPriceRvItem.text = "$ ${model.price}"
+            Glide.with(binding.imgRvItem)
                 .load(model.imageProduct)
-                .into(binding.itemImgRv)
+                .into(binding.imgRvItem)
         }
     }
 

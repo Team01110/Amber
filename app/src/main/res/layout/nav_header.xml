@@ -16,7 +16,7 @@
         android:layout_marginTop="20dp"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/tv_nav_email"
@@ -26,6 +26,6 @@
         android:layout_height="wrap_content"
 
         android:text="Email"
-        android:textColor="@color/black"/>
+        android:textColor="@color/black" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

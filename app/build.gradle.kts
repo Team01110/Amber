@@ -2,7 +2,7 @@ plugins {
     id(Plugins.AGP.application)
     id(Plugins.Kotlin.android)
     id(Plugins.Kotlin.kapt)
-    id (Plugins.DaggerHilt.hilt)
+    id(Plugins.DaggerHilt.hilt)
     id(Plugins.AGP.google_service)
 
 }
@@ -89,14 +89,17 @@ dependencies {
     implementation(Dependencies.Nav.navigation)
 
     //Firebase
-     implementation (Dependencies.Firebase.firebase_auth)
-     implementation (Dependencies.Firebase.firebase_bom)
+    implementation(Dependencies.Firebase.firebase_auth)
+    implementation(Dependencies.Firebase.firebase_bom)
 //    implementation (Dependencies.Firebase.firebase_firestore)
 //    implementation (Dependencies.Firebase.firebase_storage)
 
 
     //Glide
     implementation(Dependencies.Glide.glide)
+
+    //Splash
+    implementation("androidx.core:core-splashscreen:1.0.0")
 
     //DotsIndicator
     implementation(Dependencies.DotsIndicator.dots_indicator)

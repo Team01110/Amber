@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Splash" parent="Theme.SplashScreen">
+
+        <item name="windowSplashScreenAnimatedIcon">@drawable/amber</item>
+        <item name="postSplashScreenTheme">@style/Theme.Amber</item>
+        <item name="windowSplashScreenBackground">#E48A49</item>
+
+    </style>
+</resources>

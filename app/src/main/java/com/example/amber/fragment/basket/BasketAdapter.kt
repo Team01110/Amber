@@ -1,21 +1,15 @@
 package com.example.amber.fragment.basket
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.amber.databinding.ItemBasketBinding
-import com.example.domain.model.ItemModel
 import com.example.domain.model.Product
 
-class BasketAdapter(private val viewModel: BasketViewModel) : RecyclerView.Adapter<BasketAdapter.BasketViewHolder>() {
-    private var list: List<Product> = listOf<Product>()
-
-    var conunt = 0
-
-    private var num = 0
-
+class BasketAdapter(val pos: (pos: Int) -> Unit, val btnClickSafe: (num: Int) -> Unit) :
+    RecyclerView.Adapter<BasketAdapter.BasketViewHolder>() {
+    private var list: List<Product> = listOf()
 
     fun addItem(items: List<Product>) {
         this.list = items as ArrayList<Product>
@@ -30,46 +24,41 @@ class BasketAdapter(private val viewModel: BasketViewModel) : RecyclerView.Adapt
     override fun getItemCount(): Int = list.size
 
     override fun onBindViewHolder(holder: BasketViewHolder, position: Int) {
+        val model = list[position]
         holder.onBing(list[position])
+        holder.binding.btnPlusItemBasket.setOnClickListener {
+            model.quantity = (model.quantity.toInt() + 1).toString()
+            holder.updateQuantity(model)
+            btnClickSafe(model.quantity.toInt())
+            pos(position)
+        }
+
+        holder.binding.btnMinusItemBasket.setOnClickListener {
+            if (model.quantity.toInt() > 0) {
+                model.quantity = (model.quantity.toInt() - 1).toString()
+                holder.updateQuantity(model)
+                btnClickSafe(model.quantity.toInt())
+                pos(position)
+            }
+        }
     }
 
-    inner class BasketViewHolder(private val binding: ItemBasketBinding) :
+    inner class BasketViewHolder(val binding: ItemBasketBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun onBing(model: Product) {
-            binding.tvBasketPrice.text = model.descriptionProduct
-            binding.tvBasketTitle.text = model.price
-            binding.ratingBar.rating = model.rating.toFloat()
-            Glide.with(binding.imgBasket)
+            binding.tvBasketPriceItem.text = model.descriptionProduct
+            binding.tvBasketTitleItem.text = "$ ${model.price}"
+            binding.ratingBarBasketItem.rating = model.rating.toFloat()
+            binding.tvBasketCountItem.text = model.quantity
+            Glide.with(binding.imgBasketItem)
                 .load(model.imageProduct)
-                .into(binding.imgBasket)
-
-            binding.btnPlus.setOnClickListener {
-                num++
-                viewModel.increment(num)
-                Pius(binding.btnPlus)
-
-
-            }
-
-            binding.btnMinus.setOnClickListener {
-                num--
-                viewModel.increment(num)
-                Minus(binding.btnMinus)
-            }
+                .into(binding.imgBasketItem)
         }
 
-        fun Pius(view: View) {
-            conunt += 1
-            display(conunt)
+        fun updateQuantity(model: Product) {
+            binding.tvBasketCountItem.text = model.quantity
         }
 
-        fun Minus(view: View) {
-            conunt -= 1
-            display(conunt)
-        }
-
-        private fun display(number: Int) {
-            binding.tvBasketCount.text = "" + number
-        }
     }
+
 }

@@ -31,12 +31,11 @@
         app:layout_constraintTop_toBottomOf="@id/img_launch" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_createacc_launch"
+        android:id="@+id/btn_register_launch"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:layout_marginHorizontal="20dp"
-        android:backgroundTint="#F3E66B"
         android:text="Создать аккаунт"
         android:textColor="@color/white"
         android:textStyle="bold"

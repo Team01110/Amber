@@ -1,4 +1,3 @@
-import androidx.navigation.fragment.findNavController
 import com.example.amber.R
 import com.example.amber.base.BaseFragment
 import com.example.amber.databinding.FragmentLaunchBinding
@@ -13,17 +12,17 @@ class LaunchFragment : BaseFragment<FragmentLaunchBinding>(FragmentLaunchBinding
 
     override fun listeners() {
         binding.btnLoginLaunch.setOnClickListener {
-            findNavController().navigate(R.id.loginFragment)
+            controller.navigate(R.id.loginFragment)
         }
-        binding.btnCreateaccLaunch.setOnClickListener {
-            findNavController().navigate(R.id.registFragment)
+        binding.btnRegisterLaunch.setOnClickListener {
+            controller.navigate(R.id.registFragment)
         }
     }
 
     override fun onStart() {
         super.onStart()
         if (firebaseAuth.currentUser != null) {
-            findNavController().navigate(R.id.homeFragment)
+            controller.navigate(R.id.homeFragment)
         }
 
     }

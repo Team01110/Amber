@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.internet.ConnectionFragment">
+
+    <ImageView
+        android:src="@drawable/no_connection_icon"
+        android:id="@+id/img_internet"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="100dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp" />
+
+    <TextView
+        android:id="@+id/tv_internet"
+        android:fontFamily="@font/oswald_regular"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:text="Нет подключения к интернету"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20sp"
+        app:layout_constraintTop_toBottomOf="@id/img_internet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_tryAgain"
+        android:backgroundTint="@color/orange_amber"
+        android:fontFamily="@font/oswald_regular"
+        android:text="Попробовать снова"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

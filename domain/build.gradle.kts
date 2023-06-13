@@ -1,6 +1,6 @@
 plugins {
-    id (Plugins.Kotlin.java_library)
-    id (Plugins.Kotlin.jvm)
+    id(Plugins.Kotlin.java_library)
+    id(Plugins.Kotlin.jvm)
 }
 java {
     sourceCompatibility = JavaVersion.VERSION_11

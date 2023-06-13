@@ -7,7 +7,6 @@ import kotlinx.coroutines.flow.flowOn
 import java.io.IOException
 
 abstract class BaseRepo {
-
     protected fun <T> doRequest(request: suspend () -> T) = flow {
         emit(ResultStatus.Loading())
         try {
