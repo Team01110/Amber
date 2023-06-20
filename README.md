@@ -1,4 +1,4 @@
-<h1> Amber👋 </h1>
+<h1> Amber </h1>
 <img align="left" alt="lalit's Github Stats" src="https://github.com/Team01110/Amber/assets/109131845/ac166566-5347-42d1-9e38-0b5102fbbe74"
  width="150"/>
   <img align="left" alt="lalit's Github Stats" src="https://github.com/Team01110/Amber/assets/109131845/fe14c85d-30dd-428f-95fc-af511b0824b2"
